@@ -2,11 +2,13 @@
 import { Chessground } from './vendor/chessground/chessground.min.js';
 import { gameComments } from './game-comments.js';
 import { figurine } from './figurine.js';
+import { tally, lostPerMove } from './quality.js';
 
 const marks = { inaccuracy: '?!', mistake: '?', blunder: '??' };
 const labels = { inaccuracy: 'Inaccuracy', mistake: 'Mistake', blunder: 'Blunder', best: 'Engine’s choice' };
 const endings = { checkmate: 'By checkmate', stalemate: 'By stalemate', 'insufficient material': 'By insufficient material',
   'threefold repetition': 'By repetition', 'repetition (claimable)': 'By repetition', 'fifty-move rule': 'By the fifty-move rule' };
+const plural = (n, word) => n + ' ' + word + (n === 1 ? '' : 's');
 const dollars = (n) => '$' + (n >= 1 ? n.toFixed(2) : n >= 0.01 ? n.toFixed(3) : n.toFixed(4));
 // Lichess win chance: how full the advantage bar is for White, from the engine's centipawns.
 const whiteShare = (cp) => 50 + 50 * (2 / (1 + Math.exp(-0.00368208 * cp)) - 1);
@@ -151,8 +153,10 @@ export function createGame({ el, logo, heading, player }) {
     const winner = game.result === '1-0' ? game.white : game.result === '0-1' ? game.black : null;
     const line = (id, colour) => {
       const s = summary.sides?.[colour] || {};
+      const q = tally(game.plies.filter((p) => p.colour === colour));
       return el('li', {}, logo(player(id)), el('strong', {}, name(id)),
-        el('span', { class: 'num' }, s.accuracy != null ? s.accuracy + '% accuracy' : ''),
+        el('span', { class: 'num' }, plural(q.blunders, 'blunder')),
+        el('span', { class: 'num' }, q.moves ? lostPerMove(q) + ' pawns lost / move' : ''),
         el('span', { class: 'num' }, id !== 'human' && s.seconds != null ? clock(s.seconds) : ''),
         el('span', { class: 'num' }, id !== 'human' && s.cost_usd != null ? dollars(s.cost_usd) : ''));
     };

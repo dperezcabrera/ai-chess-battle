@@ -305,7 +305,8 @@ addEventListener('keydown', (event) => {
       event.target.closest('input, select, textarea, [contenteditable]')) return;
   if (event.key === ' ' && event.target.closest('button, a, summary')) return;
   const steps = { ArrowRight: 1, PageDown: 1, ' ': 1, ArrowLeft: -1, PageUp: -1 };
-  if (event.key in steps) { event.preventDefault(); step(steps[event.key]); }
+  // A held or lagging key (a busy VM delays the key release) auto-repeats; one press is one step.
+  if (event.key in steps) { event.preventDefault(); if (!event.repeat) step(steps[event.key]); }
   else if (event.key === 'Home' || event.key === 'End') {
     event.preventDefault();
     // Inside the game, Home and End jump to the first and last move; elsewhere, to the first and last scene.

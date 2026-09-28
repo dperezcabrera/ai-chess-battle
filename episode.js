@@ -2,6 +2,7 @@
 import { Chessground } from './vendor/chessground/chessground.min.js';
 import { figurine, piece } from './figurine.js';
 import { momentExtras, momentPicks } from './game-moments.js';
+import { tally, lostPerMove, blunderEvery } from './quality.js';
 
 // A round shows its three best moments; the score ranks them, the rarest stories first.
 const momentScore = { mate_swap: 120, queen_gift: 110, lone_king: 100, missed_mate: 50, upset: 40, blunder: 35, longest_think: 30, dearest_move: 25, close_game: 20, quickest_win: 15 };
@@ -90,6 +91,14 @@ function queenGift(game) {
     result: game.result, player: p.player, colour: p.colour, san: p.san, loss: best.loss, taker: next.san, arrow: next.uci, brush: 'red' } };
 }
 
+// Stockfish's evaluation from one side's point of view, as a reader expects it: +2.9, −0.9, or mate in N.
+const evalFor = (e, colour) => {
+  const sign = colour === 'white' ? 1 : -1;
+  if (e.mate) return sign * e.mate > 0 ? `mate in ${Math.abs(e.mate)}` : `mated in ${Math.abs(e.mate)}`;
+  const v = (sign * e.cp) / 100;
+  return (v > 0 ? '+' : v < 0 ? '−' : '') + Math.abs(v).toFixed(1);
+};
+
 // Stockfish's evaluation in centipawns for White, a mate counted as ten pawns.
 const pawns = (e) => (e.mate ? Math.sign(e.mate) * 1000 : Math.max(-1000, Math.min(1000, e.cp)));
 
@@ -131,7 +140,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
     const ids = Object.keys(t.players);
     const pts = Object.fromEntries(ids.map((id) => [id, 0]));
     const cost = { ...pts }, seconds = { ...pts };
-    const record = Object.fromEntries(ids.map((id) => [id, { w: 0, d: 0, l: 0, accuracy: [] }]));
+    const record = Object.fromEntries(ids.map((id) => [id, { w: 0, d: 0, l: 0 }]));
     for (const round of t.rounds.filter((r) => r.number <= k)) {
       if (round.bye) pts[round.bye] += 1;
       for (const g of round.games) {
@@ -141,7 +150,6 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
           const id = g[colour], s = g.sides?.[colour] || {};
           cost[id] += s.cost_usd || 0; seconds[id] += s.seconds || 0;
           record[id][score === 1 ? 'w' : score === 0 ? 'l' : 'd'] += 1;
-          if (s.accuracy != null) record[id].accuracy.push(s.accuracy);
         }
       }
     }
@@ -153,7 +161,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
 
   // The round's three best moments: hand-picked ones from game-moments.js, else the top scores found in the games.
   // Every published game, loaded once for the whole tournament.
-  let allGames = null;
+  let allGames = null, loadedGames = [];
   const tournamentGames = (loadJSON) => allGames ||= Promise.all(t.rounds.map(async (round) => ({ number: round.number,
     games: await Promise.all(round.games.map((g) => loadJSON('data/' + encodeURIComponent(t.id) + '/' + g.file).catch(() => null))) })));
 
@@ -192,10 +200,24 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
     const games = Object.fromEntries(round.games.map((g, i) => [g.board, null]));
     const loaded = (await tournamentGames(loadJSON)).find((r) => r.number === number)?.games || [];
     round.games.forEach((g, i) => { games[g.board] = loaded[i]; });
-    const written = (list) => (list || []).map(({ board, ply, title, metric, caption }) => {
+    const written = (list) => (list || []).map(({ board, ply, title, metric, caption, steps }) => {
       const game = games[board];
+      if (!game) return null;
       // The board faces the side that made the move (ply 1 is White's).
-      return game && { key: 'pick', score: 200, title, h: { ...where(game, ply), board, white: game.white, black: game.black, result: game.result, metric, caption, player: ply % 2 ? game.white : game.black } };
+      const colour = ply % 2 ? 'white' : 'black';
+      const h = { ...where(game, ply), board, white: game.white, black: game.black, result: game.result, metric, caption, player: game[colour], orientation: colour };
+      // With `steps`, Next walks the exchange: the position before the opponent's move, that move (with an arrow
+      // on the reply), then the reply itself, each with Stockfish's verdict for the side that replies.
+      if (steps && ply > 1) {
+        const move = game.plies[ply - 1], previous = game.plies[ply - 2];
+        const side = game[colour], opponent = game[colour === 'white' ? 'black' : 'white'];
+        h.frames = [
+          { ...where(game, ply - 2), start: { opponent, side, colour, eval: game.evals[ply - 2] } },
+          { ...where(game, ply - 1), arrow: move.uci, before: { previous, side, colour, eval: game.evals[ply - 1] } },
+          { ...where(game, ply), after: { move, side, colour, eval: game.evals[ply] } },
+        ];
+      }
+      return { key: 'pick', score: 200, title, h };
     }).filter(Boolean);
     if (momentPicks[number]?.length) return written(momentPicks[number]);
     // Games with the human stay out of the automatic great hits: they are about the machines.
@@ -217,6 +239,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
   // and the bill. Rounds are chained, so ids carry the round and only the last round closes.
   async function scenes(tournament, round, loadJSON, { last = true } = {}) {
     t = tournament;
+    loadedGames = await tournamentGames(loadJSON);
     const moments = await pickMoments(round, loadJSON);
     n = round;
     const list = [
@@ -224,9 +247,10 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
       { id: 'results', type: 'results', chapter: 'results', label: 'The pairings' },
       { id: 'standings', type: 'standings', chapter: 'standings', label: 'The table' },
       ...(moments.length ? [{ id: 'hits', type: 'hits', chapter: 'moments', label: 'Great hits', moments }] : []),
-      ...moments.map((m, i) => ({ id: m.key + '-' + (i + 1), type: 'moment', chapter: 'moments', label: m.title || momentLabels[m.key], moment: m, ...(m.key === 'mate_swap' && swapControls(m.h)) })),
+      ...moments.map((m, i) => ({ id: m.key + '-' + (i + 1), type: 'moment', chapter: 'moments', label: m.title || momentLabels[m.key], moment: m, ...(m.h.frames && swapControls(m.h)) })),
       // The chances and the bill come once, at the end of the tournament: round after round they only grow.
-      ...(round === t.rounds_total ? [{ id: 'chances', type: 'chances', chapter: 'standings', label: 'The chances', rows: await chances(loadJSON) },
+      ...(round === t.rounds_total ? [{ id: 'blunders', type: 'blunders', chapter: 'standings', label: 'The blunders' },
+        { id: 'chances', type: 'chances', chapter: 'standings', label: 'The chances', rows: await chances(loadJSON) },
         { id: 'bill', type: 'bill', chapter: 'standings', label: 'The bill' }] : []),
       ...(!last ? [] : round < t.rounds_total ? [{ id: 'next', type: 'next', chapter: 'next', label: 'Next round' }]
         : [{ id: 'podium', type: 'podium', chapter: 'next', label: 'The AI podium', machines: true }]),
@@ -250,6 +274,12 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
 
   // One step of a mate ping-pong, in words: who hands over a mate, who misses it, who finally takes it.
   function frameText(h, f) {
+    // Stockfish's verdict for one side, signed from its point of view: +2.9 is that side ahead.
+    const verdict = (side, colour, e) => `${name(side)} ${evalFor(e, colour)}`;
+    if (f.start) return `${name(f.start.opponent)} to move. Stockfish: ${verdict(f.start.side, f.start.colour, f.start.eval)}.`;
+    if (f.before) return [`${name(f.before.previous.player)} plays `, figurine(f.before.previous.san, f.before.previous.colour),
+      `. Stockfish: ${verdict(f.before.side, f.before.colour, f.before.eval)}.`];
+    if (f.after) return ['After ', figurine(f.after.move.san, f.after.colour), `: ${verdict(f.after.side, f.after.colour, f.after.eval)}. `, h.caption || ''];
     const m = f.move;
     if (!m) return f.mateIn ? `${name(f.toMove)} has a mate in ${f.mateIn} on the board.` : `${name(f.toMove)} to move.`;
     const who = name(m.player), opponent = name(m.colour === 'white' ? h.black : h.white);
@@ -269,7 +299,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
     };
     return {
       mount(root, fromLater) {
-        state.ground = Chessground(root.querySelector('[data-steps]').appendChild(el('div')), { viewOnly: true, coordinates: false,
+        state.ground = Chessground(root.querySelector('[data-steps]').appendChild(el('div')), { viewOnly: true, coordinates: false, orientation: h.orientation || 'white',
           animation: { enabled: true, duration: 250 }, drawable: { enabled: false, visible: true } });
         state.caption = root.querySelector('.moment-caption');
         state.frame = fromLater ? h.frames.length - 1 : 0;
@@ -297,7 +327,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
       lone_king: () => [[...h.pieces.map((p) => piece(p, h.colour)), ' vs ', piece('K', h.colour === 'white' ? 'black' : 'white')],
         `${name(h.strong)} kept ${plural(h.pieces.length, 'piece')} against a lone king and still found no mate. Draw by ${h.termination.includes('fifty') ? 'the fifty-move rule' : 'repetition'}.`],
       missed_mate: () => [`Mate in ${h.mate}`, [`${name(h.player)} had a forced mate on the board. It played `, figurine(h.san, h.colour), ' instead of ', figurine(h.best, h.colour), '. ' + drawn]],
-      pick: () => [h.metric || '', h.caption || ''],
+      pick: () => [h.metric || '', h.frames ? frameText(h, h.frames[0]) : h.caption || ''],
       queen_gift: () => [[piece('Q', h.colour), ' for free'], [`${who} played `, figurine(h.san, h.colour), ' and left the queen hanging. ',
         `${name(h.player === h.white ? h.black : h.white)} took it: `, figurine(h.taker, h.colour === 'white' ? 'black' : 'white'), '.']],
       mate_swap: () => [plural(h.frames.filter((f) => f.move?.missed).length, 'missed mate'), frameText(h, h.frames[0])],
@@ -329,7 +359,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
   // The round's cover: its number alone, and for the final round, a word that it is the last.
   function coverScene() {
     return el('div', { class: 'confusion-layout round-cover' }, el('header', { class: 'scene-heading' },
-      el('h1', { tabindex: '-1' }, `Round ${n}.`), n === t.rounds_total && el('p', { class: 'lede' }, 'The last one.')));
+      el('h1', { tabindex: '-1' }, `Round ${n}`), n === t.rounds_total && el('p', { class: 'lede' }, 'The last one.')));
   }
 
   // The cover of the round's best moments, naming what is coming.
@@ -348,10 +378,10 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
       for (const g of round.games) { opponents[g.white].push(g.black); opponents[g.black].push(g.white); }
     }
     const tiebreak = (id) => opponents[id].map((o) => now.pts[o]).sort((a, b) => a - b).slice(1).reduce((a, b) => a + b, 0);
+    const quality = playQuality(n);
     const rows = now.order.map((id) => {
       const moved = before.place[id] - now.place[id];
       const r = now.record[id];
-      const accuracy = r.accuracy.length ? (r.accuracy.reduce((a, b) => a + b, 0) / r.accuracy.length).toFixed(1) + '%' : '';
       // Before the name, how the round moved the player: up in green, down in red, the same in amber.
       const trend = n > 1 && el('span', { class: 'trend ' + (moved > 0 ? 'up' : moved < 0 ? 'down' : 'same'), 'aria-label': moved > 0 ? `up ${moved}` : moved < 0 ? `down ${-moved}` : 'same place' },
         moved ? [arrow(), Math.abs(moved)] : '=');
@@ -359,13 +389,14 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
         el('span', { class: 'rank' }, now.place[id] + 1),
         el('span', { class: 'player-cell' }, trend, side(id)),
         el('span', { class: 'stat num' }, r.w), el('span', { class: 'stat num' }, r.d), el('span', { class: 'stat num' }, r.l),
-        el('span', { class: 'stat num' }, accuracy),
+        el('span', { class: 'stat num' }, quality[id].blunders),
+        el('span', { class: 'stat num' }, lostPerMove(quality[id])),
         el('span', { class: 'stat num time' }, human(id) ? '' : hms(now.seconds[id])),
         el('span', { class: 'stat num' }, human(id) ? '' : dollars(now.cost[id])),
         el('span', { class: 'stat num' }, points(tiebreak(id))),
         el('span', { class: 'pts' }, points(now.pts[id])));
     });
-    const columns = ['#', 'Player', 'W', 'D', 'L', 'Accuracy', 'Thinking', 'Spent', 'Tie-break', 'Pts'];
+    const columns = ['#', 'Player', 'W', 'D', 'L', 'Blunders', 'Lost / move', 'Thinking', 'Spent', 'Tie-break', 'Pts'];
     return el('div', { class: 'standings-layout' },
       el('header', { class: 'scene-heading' }, el('p', { class: 'eyebrow' }, `After round ${n}`)),
       el('div', { class: 'table-head', 'aria-hidden': 'true' }, columns.map((c) => el('span', {}, c))),
@@ -393,14 +424,42 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
 
   function chancesScene({ rows }) {
     return el('div', { class: 'bill-layout' },
-      heading('The whole tournament', 'Chances taken.', 'Won against what they could have won, lost against what they could have lost.'),
+      heading('The whole tournament', 'Chances taken.', 'Games won against games with a decisive advantage, games lost against games with a decisive disadvantage.'),
       el('table', { class: 'bill chances' },
-        el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, 'Player'), el('th', { scope: 'col' }, 'Won'), el('th', { scope: 'col' }, 'Could have won'),
-          el('th', { scope: 'col' }, 'Lost'), el('th', { scope: 'col' }, 'Could have lost'))),
+        el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, 'Player'), el('th', { scope: 'col' }, 'Won'), el('th', { scope: 'col' }, 'Decisive advantage'),
+          el('th', { scope: 'col' }, 'Lost'), el('th', { scope: 'col' }, 'Decisive disadvantage'))),
         el('tbody', {}, rows.map((r) => el('tr', {},
           el('td', {}, side(r.id)),
           el('td', { class: 'num' }, r.won), el('td', { class: 'num' }, r.could),
           el('td', { class: 'num' }, r.lost), el('td', { class: 'num' }, r.risked))))));
+  }
+
+  // Blunders and pawns lost per move for every player, over the games of rounds 1..k.
+  function playQuality(k) {
+    const q = Object.fromEntries(Object.keys(t.players).map((id) => [id, { moves: 0, blunders: 0, loss: 0 }]));
+    for (const { number, games } of loadedGames) {
+      if (number > k) continue;
+      for (const game of games.filter(Boolean)) {
+        for (const colour of ['white', 'black']) tally(game.plies.filter((p) => p.colour === colour), q[game[colour]]);
+      }
+    }
+    return q;
+  }
+
+  // The whole tournament's blunder rate, machines only, the steadiest first.
+  function blundersScene() {
+    const q = playQuality(t.rounds_total);
+    const rows = Object.keys(t.players).filter((id) => t.players[id].kind !== 'human')
+      .sort((a, b) => (blunderEvery(q[b]) ?? Infinity) - (blunderEvery(q[a]) ?? Infinity));
+    return el('div', { class: 'bill-layout' },
+      heading('The whole tournament', 'One blunder every…'),
+      el('table', { class: 'bill chances' },
+        el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, 'Player'), el('th', { scope: 'col' }, 'Moves'), el('th', { scope: 'col' }, 'Blunders'),
+          el('th', { scope: 'col' }, 'One every'), el('th', { scope: 'col' }, 'Pawns lost / move'))),
+        el('tbody', {}, rows.map((id) => el('tr', {},
+          el('td', {}, side(id)), el('td', { class: 'num' }, q[id].moves), el('td', { class: 'num' }, q[id].blunders),
+          el('td', { class: 'num' }, blunderEvery(q[id]) ? plural(blunderEvery(q[id]), 'move') : 'never'),
+          el('td', { class: 'num' }, lostPerMove(q[id])))))));
   }
 
   function billScene() {
@@ -443,7 +502,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
         el('span', { class: 'place' }, ['1st', '2nd', '3rd'][i]), logo(player(order[i])), el('strong', {}, name(order[i])), el('span', { class: 'num' }, points(pts[order[i]]) + ' pts')))));
   }
 
-  const renderers = { chances: chancesScene, cover: coverScene, hits: hitsScene, results: resultsScene, moment: (s) => momentScene(s.moment), standings: standingsScene, bill: billScene, next: nextScene, podium: podiumScene };
+  const renderers = { blunders: blundersScene, chances: chancesScene, cover: coverScene, hits: hitsScene, results: resultsScene, moment: (s) => momentScene(s.moment), standings: standingsScene, bill: billScene, next: nextScene, podium: podiumScene };
   return {
     scenes,
     // A chained presentation holds several rounds: each scene renders the round it belongs to.

@@ -1,11 +1,12 @@
 // Hand-written moments for a round's great hits. Keyed by round; ply 1 is White's first move and the board shows the
-// position after it (0 is the start). `momentExtras` join the automatic moments, first in line; `momentPicks`
+// position after it (0 is the start); with `steps: true`, Next walks the opponent's move before it, then the move.
+// `momentExtras` join the automatic moments, first in line; `momentPicks`
 // replace them altogether for that round.
 // This repository is public: only commit moments for rounds that are already published.
 export const momentExtras = {
   3: [
-    { board: 1, ply: 37, title: 'The machine strikes back', metric: '+2.9',
-      caption: 'Gemini 3.8 Flash found Stockfish’s own move. For a few moves, a machine was winning against the undefeated human.' },
+    { board: 1, ply: 37, title: 'The machine strikes back', metric: '+2.9', steps: true,
+      caption: 'The human slipped and Gemini 3.8 Flash found Stockfish’s own reply. For a few moves, a machine was winning against the undefeated human.' },
   ],
 };
 
