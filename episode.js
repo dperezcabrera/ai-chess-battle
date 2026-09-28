@@ -4,9 +4,9 @@ import { figurine, piece } from './figurine.js';
 import { momentExtras, momentPicks } from './game-moments.js';
 
 // A round shows its three best moments; the score ranks them, the rarest stories first.
-const momentScore = { mate_swap: 120, queen_gift: 110, lone_king: 100, missed_mate: 50, upset: 40, blunder: 35, longest_think: 30, dearest_move: 25, best_game: 20, quickest_win: 15 };
+const momentScore = { mate_swap: 120, queen_gift: 110, lone_king: 100, missed_mate: 50, upset: 40, blunder: 35, longest_think: 30, dearest_move: 25, close_game: 20, quickest_win: 15 };
 const momentLabels = { mate_swap: 'Mate ping-pong', queen_gift: 'The queen gift', lone_king: 'Lone king vs all', missed_mate: 'The missed mate', upset: 'The upset', blunder: 'The blunder', longest_think: 'The long think',
-  dearest_move: 'The dearest move', best_game: 'The cleanest game', quickest_win: 'The quickest win', pick: 'The moment' };
+  dearest_move: 'The dearest move', close_game: 'The closest fight', quickest_win: 'The quickest win', pick: 'The moment' };
 const START = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
 const pieceOrder = 'QRBNP';
 // Pieces other than the king for each side, strongest first, from a FEN.
@@ -88,6 +88,15 @@ function queenGift(game) {
   const p = game.plies[best.k], next = game.plies[best.k + 1];
   return { key: 'queen_gift', score: momentScore.queen_gift, h: { ...where(game, best.k + 1), board: game.board, white: game.white, black: game.black,
     result: game.result, player: p.player, colour: p.colour, san: p.san, loss: best.loss, taker: next.san, arrow: next.uci, brush: 'red' } };
+}
+
+// Stockfish's evaluation in centipawns for White, a mate counted as ten pawns.
+const pawns = (e) => (e.mate ? Math.sign(e.mate) * 1000 : Math.max(-1000, Math.min(1000, e.cp)));
+
+// How long a game stayed level: the positions Stockfish saw within one pawn, and the last of them.
+function level(game) {
+  const within = game.evals.slice(0, -1).map((e, k) => (Math.abs(pawns(e)) <= 100 ? k : -1)).filter((k) => k >= 0);
+  return { count: within.length, last: within.at(-1) ?? 0 };
 }
 
 // A side that had a forced mate in five or fewer, with the move to make, and did not win: the first such position.
@@ -192,8 +201,13 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
     // Games with the human stay out of the automatic great hits: they are about the machines.
     const machines = (m) => m.h.white !== 'human' && m.h.black !== 'human';
     const found = [...written(momentExtras[number]), ...((await specialMoments(loadJSON))[number] || [])];
-    const built = Object.entries(round.highlights || {}).filter(([key]) => momentScore[key]).map(([key, h]) => ({ key, score: momentScore[key], h })).filter(machines);
     const boardOf = (m) => m.h.board ?? Number(m.h.file?.match(/-b(\d+)\.json$/)?.[1]);
+    const built = Object.entries(round.highlights || {}).filter(([key]) => momentScore[key]).map(([key, h]) => ({ key, score: momentScore[key], h })).filter(machines);
+    // The closest fight is the machines' game that Stockfish saw level for longest, not the most accurate one.
+    const fights = Object.values(games).filter((g) => g && g.white !== 'human' && g.black !== 'human').map((game) => ({ game, ...level(game) }));
+    const closest = fights.sort((a, b) => b.count - a.count)[0];
+    if (closest) built.push({ key: 'close_game', score: momentScore.close_game, h: { ...where(closest.game, closest.last), board: closest.game.board,
+      white: closest.game.white, black: closest.game.black, result: closest.game.result, moves: Math.round(closest.count / 2) } });
     const seen = new Set();
     return [...found, ...built].sort((a, b) => b.score - a.score)
       .filter((m) => { const board = boardOf(m); if (seen.has(board)) return false; seen.add(board); return true; }).slice(0, 3);
@@ -211,8 +225,9 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
       { id: 'standings', type: 'standings', chapter: 'standings', label: 'The table' },
       ...(moments.length ? [{ id: 'hits', type: 'hits', chapter: 'moments', label: 'Great hits', moments }] : []),
       ...moments.map((m, i) => ({ id: m.key + '-' + (i + 1), type: 'moment', chapter: 'moments', label: m.title || momentLabels[m.key], moment: m, ...(m.key === 'mate_swap' && swapControls(m.h)) })),
-      // The bill comes once, as the tournament's receipt before the podium: round after round it only grows.
-      ...(round === t.rounds_total ? [{ id: 'bill', type: 'bill', chapter: 'standings', label: 'The bill' }] : []),
+      // The chances and the bill come once, at the end of the tournament: round after round they only grow.
+      ...(round === t.rounds_total ? [{ id: 'chances', type: 'chances', chapter: 'standings', label: 'The chances', rows: await chances(loadJSON) },
+        { id: 'bill', type: 'bill', chapter: 'standings', label: 'The bill' }] : []),
       ...(!last ? [] : round < t.rounds_total ? [{ id: 'next', type: 'next', chapter: 'next', label: 'Next round' }]
         : [{ id: 'podium', type: 'podium', chapter: 'next', label: 'The AI podium', machines: true }]),
     ];
@@ -290,7 +305,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
       blunder: () => [[figurine(h.san, side), '??'], [`${who} played `, figurine(h.san, side), '. Stockfish wanted ', figurine(h.best, side), '. ' + (h.loss < 1000 ? `It gave away ${(h.loss / 100).toFixed(1)} pawns.` : h.result === (h.player === h.white ? '0-1' : '1-0') ? 'The engine called it lost on the spot.' : 'A losing move. Nobody noticed.')]],
       longest_think: () => [duration(h.seconds), [`${who} thought this long before playing `, figurine(h.san, side), '.']],
       dearest_move: () => [dollars(h.cost_usd), [`${who} wrote ${h.output_tokens.toLocaleString('en-US')} tokens to play `, figurine(h.san, side), '. One move.']],
-      best_game: () => [h.accuracy.map((a) => a + '%').join(' / '), `Accuracy: ${name(h.white)} ${h.accuracy[0]}%, ${name(h.black)} ${h.accuracy[1]}%.`],
+      close_game: () => [plural(h.moves, 'move') + ' level', `For ${plural(h.moves, 'move')}, Stockfish saw less than a pawn between ${name(h.white)} and ${name(h.black)}.`],
       quickest_win: () => [plural(h.moves, 'move'), `${name(winner)} beat ${name(loser)} in ${plural(h.moves, 'move')}.`],
     }[key]();
   }
@@ -357,6 +372,37 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
       el('ol', { class: 'table-rows shown', style: '--rows:' + rows.length, 'aria-label': 'Standings after round ' + n }, rows));
   }
 
+  // For every model, the games it won against the games it could have won (it reached +3 or better, a forced mate
+  // counts), and the games it lost against the games it could have lost (it fell to -3 or worse). The human stays out.
+  async function chances(loadJSON) {
+    const rows = Object.fromEntries(Object.keys(t.players).filter((id) => t.players[id].kind !== 'human').map((id) => [id, { id, won: 0, could: 0, lost: 0, risked: 0 }]));
+    for (const { games } of await tournamentGames(loadJSON)) {
+      for (const game of games.filter(Boolean)) {
+        const values = game.evals.slice(0, -1).map(pawns);
+        for (const [colour, sign, win, loss] of [['white', 1, '1-0', '0-1'], ['black', -1, '0-1', '1-0']]) {
+          const row = rows[game[colour]];
+          if (!row) continue;
+          row.won += game.result === win; row.lost += game.result === loss;
+          row.could += Math.max(...values.map((v) => sign * v)) >= 300;
+          row.risked += Math.min(...values.map((v) => sign * v)) <= -300;
+        }
+      }
+    }
+    return Object.values(rows).sort((a, b) => b.could - b.won - (a.could - a.won) || b.could - a.could);
+  }
+
+  function chancesScene({ rows }) {
+    return el('div', { class: 'bill-layout' },
+      heading('The whole tournament', 'Chances taken.', 'Won against what they could have won, lost against what they could have lost.'),
+      el('table', { class: 'bill chances' },
+        el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, 'Player'), el('th', { scope: 'col' }, 'Won'), el('th', { scope: 'col' }, 'Could have won'),
+          el('th', { scope: 'col' }, 'Lost'), el('th', { scope: 'col' }, 'Could have lost'))),
+        el('tbody', {}, rows.map((r) => el('tr', {},
+          el('td', {}, side(r.id)),
+          el('td', { class: 'num' }, r.won), el('td', { class: 'num' }, r.could),
+          el('td', { class: 'num' }, r.lost), el('td', { class: 'num' }, r.risked))))));
+  }
+
   function billScene() {
     const { pts, cost, seconds } = after(n);
     const ids = Object.keys(t.players).sort((a, b) => cost[b] - cost[a]);
@@ -397,7 +443,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
         el('span', { class: 'place' }, ['1st', '2nd', '3rd'][i]), logo(player(order[i])), el('strong', {}, name(order[i])), el('span', { class: 'num' }, points(pts[order[i]]) + ' pts')))));
   }
 
-  const renderers = { cover: coverScene, hits: hitsScene, results: resultsScene, moment: (s) => momentScene(s.moment), standings: standingsScene, bill: billScene, next: nextScene, podium: podiumScene };
+  const renderers = { chances: chancesScene, cover: coverScene, hits: hitsScene, results: resultsScene, moment: (s) => momentScene(s.moment), standings: standingsScene, bill: billScene, next: nextScene, podium: podiumScene };
   return {
     scenes,
     // A chained presentation holds several rounds: each scene renders the round it belongs to.
