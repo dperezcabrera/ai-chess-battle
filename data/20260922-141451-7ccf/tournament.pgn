@@ -1,1 +1,791 @@
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.1"]
+[White "Jev (jev-latest)"]
+[Black "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Nc3 b5 7. Bb3 O-O 8. Bxf7+ Rxf7 9. Ng5 Rf8 10. Qf3 h6 11. Qh3 hxg5 12. Qf3 Nd4 13. Qd3 Bb7 14. Qxd4 exd4 15. Rd1 dxc3 16. dxc3 Nxe4 17. Re1 d5 18. Rxe4 dxe4 19. Kf1 Qd1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.2"]
+[White "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Black "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Nxe5 Be7 7. Nc3 O-O 8. Bxc6 dxc6 9. d4 Nf5 10. g4 Nxd4 11. Qxd4 Qxd4 12. Nf3 Qxg4+ 13. Kh1 Qxf3+ 14. Kg1 Bh3 15. Rxe7 Qg2# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.3"]
+[White "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Black "grok-4.7 (x-ai/grok-4.7)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Nd6 6. Bxc6 dxc6 7. dxe5 Nf5 8. Qxd8+ Kxd8 9. Nc3 Ke8 10. h3 Be7 11. Bf4 Be6 12. Rad1 Rd8 13. Rxd8+ Kxd8 14. Rd1+ Kc8 15. g4 Nh4 16. Nxh4 Bxh4 17. Kg2 Rd8 18. Rxd8+ Kxd8 19. a3 Ke7 20. Ne4 Bd5 21. f3 Ke6 22. Nc5+ Ke7 23. Nxb7 g6 24. Nc5 f6 25. exf6+ Kxf6 26. Bxc7 Kf7 27. Nd3 Bf6 28. b4 Bd4 29. Nf4 Bc4 30. Nd3 Bd5 31. Nf4 Bc4 32. Nd3 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.4"]
+[White "glm-5.3 (z-ai/glm-5.3)"]
+[Black "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. Qe2 d5 6. Qxe4+ dxe4 7. Ne5 Qd6 8. Bb5+ c6 9. Bc4 Qxe5 10. O-O Bd6 11. Re1 Qxh2+ 12. Kf1 Qh1+ 13. Ke2 Qh5+ 14. Ke3 Qc5+ 15. d4 Qxc4 16. Kxe4 Qxc2+ 17. Kf3+ Kf8 18. Re8+ Kxe8 19. Ke3 Qxc1+ 20. Ke2 Qxb2+ 21. Nd2 Qxa1 22. Kf3 Qc3+ 23. Ke2 Qxd4 24. Kf3 Qd3# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.5"]
+[White "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Black "Human"]
+[Result "0-1"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. Nxd5 exd5 6. Nf3 c5 7. Bb5 Nc6 8. Bxc6 bxc6 9. O-O cxd4 10. Nxd4 Qc7 11. Nxc6 Qxc6 12. Qxd5 Qxd5 13. Bf4 Bb7 14. e6 Qxg2# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.6"]
+[White "gpt-6-astra (openai/gpt-6-astra)"]
+[Black "kimi-k3 (moonshotai/kimi-k3)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Nd6 6. Bxc6 dxc6 7. dxe5 Nf5 8. Qxd8+ Kxd8 9. Nc3 Be7 10. Rd1+ Ke8 11. h3 Be6 12. g4 Nh4 13. Nd4 Nf3+ 14. Nxf3 Bc5 15. Ne4 Bb6 16. Be3 f6 17. exf6 Kf7 18. Nfg5+ Kg6 19. Nxe6 Kf7 20. Rd7+ Kxe6 21. Re7+ Kd5 22. Rd1+ Kc4 23. fxg7 Rhg8 24. Nf6 Kb5 25. Re8 Rxg7 26. Rxa8 Rf7 27. Ne4 Bxe3 28. fxe3 Rf1+ 29. Rxf1 Kc4 30. Rxa7 Kb5 31. Rxb7+ Ka6 32. Nc5+ Ka5 33. b4# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.7"]
+[White "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Black "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Result "0-1"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Nxd6+ Bxd6 8. Qxd6 Qxd6 9. Be2 O-O 10. O-O Nxe4 11. Nxe4 Rd8 12. Nxd6 Rxd6 13. Bf3 Be6 14. Bxc6 bxc6 15. Be3 Rd2 16. Bxd2 Bxa2 17. Rxa2 Rd8 18. Rxa7 Rxd2 19. Rxf7 Kxf7 20. Rd1 Rxd1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "1.8"]
+[White "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Black "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Bxf7+ Kxf7 5. Nxe5+ Ke6 6. Qg4+ Kxe5 7. Qg5+ Kxe4 8. Qe5+ Nxe5 9. Nc3+ Kf5 10. g4+ Kxg4 11. Rg1+ Kh3 12. Rg3+ Kxh2 13. Rh3+ Kxh3 14. Nd5 Nf3+ 15. Ke2 Nd4+ 16. Kd3 Nxc2 17. Nf4+ Kh2 18. Kxc2 Kh1 19. Nh3 Kh2 20. Ng5 Kg1 21. Nf3+ Kxf2 22. Nd4 Kg2 23. Nf5 Kf2 24. Nxg7 Bxg7 25. d4 Kg3 26. Bf4+ Kxf4 27. Rf1+ Kg5 28. Rf5+ Kxf5 29. d5 Nxd5 30. b4 Nxb4+ 31. Kb3 Nxa2 32. Kxa2 Qg8+ 33. Ka3 Qb3+ 34. Kxb3 Bf8 35. Kc4 d5+ 36. Kxd5 Be6+ 37. Kd4 c5+ 38. Ke3 Bh6+ 39. Kf3 Rhf8 40. Ke2 Bc4+ 41. Kf3 Bd5+ 42. Ke2 Bc4+ 43. Kf3 Bd5+ 44. Ke2 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.1"]
+[White "Human"]
+[Black "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Result "1-0"]
+
+1. d4 Nf6 2. Nf3 d5 3. e3 e6 4. Bd3 Bd6 5. Nbd2 O-O 6. Qe2 c5 7. c3 Nbd7 8. O-O e5 9. dxe5 Nxe5 10. e4 Nxf3+ 11. Qxf3 Bg4 12. Qe3 Re8 13. f3 Be6 14. e5 Bxe5 15. Qxe5 Nd7 16. Qg3 Nf6 17. Bc2 Nh5 18. Qf2 Nf6 19. Nb3 c4 20. Nd4 Qb6 21. Kh1 Bd7 22. Bg5 h6 23. Bh4 Qxb2 24. Bh7+ Kxh7 25. Qxb2 Nh5 26. Rfe1 g5 27. Rxe8 Bxe8 28. Bg3 Nxg3+ 29. hxg3 Rb8 30. Re1 Bd7 31. Re7 Kh8 32. Rxd7 Kg7 33. Rxb7 Rxb7 34. Qxb7 a5 35. Qxd5 f6 36. Qxa5 h5 37. g4 h4 38. Qc7+ Kh6 39. Nf5+ Kg6 40. Qg7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.2"]
+[White "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Black "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 exd4 6. Re1 d5 7. Nxd4 Bd6 8. Be3 O-O 9. Nxc6 bxc6 10. Bd3 Nf6 11. Bg5 h6 12. Bh4 Be6 13. Nd2 Re8 14. c3 Bxh2+ 15. Kxh2 Ng4+ 16. Qxg4 Bxg4 17. Bxd8 Rexd8 18. Re7 Kf8 19. Rxc7 Rd6 20. Re1 Kg8 21. Ree7 Kf8 22. Rxf7+ Kg8 23. Rxg7+ Kh8 24. Rxg4 Rg8 25. Rh7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.3"]
+[White "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Black "gpt-6-astra (openai/gpt-6-astra)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Nxe5 Be7 7. Bf1 Nxe5 8. Rxe5 O-O 9. d4 Bf6 10. Re1 Re8 11. Nc3 Rxe1 12. Qxe1 Bxd4 13. Bd3 g6 14. Bh6 Qh4 15. Be3 Bxe3 16. Qxe3 b6 17. Nd5 Bb7 18. Nxc7 Rc8 19. Qe5 Ne4 20. Bxe4 Bxe4 21. Re1 Bxc2 22. Nd5 Qe4 23. Nf6+ Kf8 24. Qxe4 Bxe4 25. Nxe4 Rc2 26. b3 Rxa2 27. Nf6 Kg7 28. Nxd7 Rb2 29. Re3 Rb1+ 30. Re1 Rxe1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.4"]
+[White "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Black "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Result "0-1"]
+
+1. e4 c5 2. d4 cxd4 3. Qxd4 Nc6 4. Qxd7+ Bxd7 5. Nf3 Nf6 6. Nc3 e6 7. Bb5 a6 8. Bxc6 bxc6 9. O-O Be7 10. Ne5 O-O 11. Nxf7 Rxf7 12. Nd5 exd5 13. exd5 Nxd5 14. Bh6 gxh6 15. Rfe1 Qf8 16. Rxe7 Rxe7 17. Rf1 Rae8 18. Re1 Rxe1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.5"]
+[White "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Black "grok-4.7 (x-ai/grok-4.7)"]
+[Result "0-1"]
+
+1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 Nc6 5. Nc3 e6 6. Nf3 Be7 7. Be2 O-O 8. O-O d6 9. exd6 cxd6 10. d5 exd5 11. cxd5 Bf6 12. dxc6 bxc6 13. Qxd6 Qxd6 14. Be3 Rb8 15. Bxb6 axb6 16. Rfc1 Be6 17. Ba6 Ra8 18. Bb7 Rab8 19. Bxc6 Qxc6 20. Nd5 Qxd5 21. Ng5 Qxg5 22. Rc8 Rbxc8 23. f3 Bd4+ 24. Kh1 Rc2 25. Rg1 Bxg1 26. Kxg1 Qc1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.6"]
+[White "Jev (jev-latest)"]
+[Black "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Result "1-0"]
+
+1. e4 c5 2. Nf3 Nc6 3. Nc3 g6 4. Bc4 Bg7 5. O-O Nf6 6. Bxf7+ Kxf7 7. Ng5+ Kg8 8. Qf3 h6 9. Qg3 hxg5 10. Qxg5 Nxe4 11. Nxe4 Bxb2 12. Bxb2 Rh7 13. Qxg6+ Rg7 14. Qxg7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.7"]
+[White "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Black "glm-5.3 (z-ai/glm-5.3)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Bxc6 dxc6 6. Nxe5 Qd4 7. Nf3 Qe5 8. Nxe5 Nxf2 9. Kxf2 Bc5+ 10. Ke1 O-O 11. Nxf7 Re8+ 12. Qe2 Rxe2+ 13. Kxe2 Bg4+ 14. Kd3 Bf5+ 15. Rxf5 Rf8 16. Rxc5 Rxf7 17. Rxc6 bxc6 18. Nc3 Rd7+ 19. Ke3 Rd8 20. Kf3 Rd3+ 21. cxd3 Kf7 22. Ne4 Kg8 23. Nf6+ gxf6 24. Rb1 Kg7 25. Kg3 Kg6 26. Ra1 Kg7 27. Kf4 Kg6 28. Ke4 Kh6 29. Kf5 Kg7 30. Ke6 Kg8 31. Kxf6 Kf8 32. Ke6 Kg8 33. Ke7 Kg7 34. Kd7 Kf8 35. Kxc7 h5 36. Kxc6 Kg7 37. Kb7 a5 38. Kc8 h4 39. Kd7 Kf7 40. Kd6 Kg6 41. Kc6 Kf7 42. Kb6 Kg7 43. Kxa5 Kg8 44. Kb6 Kg7 45. Rb1 h3 46. gxh3 Kh8 47. Kc7 Kg7 48. Kd6 Kf7 49. Kc7 Kg8 50. Kd6 Kh8 51. Ke7 Kg7 52. Ra1 Kh8 53. Kf7 Kh7 54. Rb1 Kh8 55. Kg6 Kg8 56. Ra1 Kh8 57. Rb1 Kg8 58. Ra1 Kh8 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "2.8"]
+[White "kimi-k3 (moonshotai/kimi-k3)"]
+[Black "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Bxc6 dxc6 7. Rxe5+ Be7 8. Nd4 Nc4 9. Rh5 g6 10. Nf5 gxh5 11. Ng7+ Kf8 12. Nxh5 Qd5 13. Nf4 Qg5 14. Nd3 Kg8 15. Nc3 Bd7 16. Ne4 Qf5 17. Nf6+ Bxf6 18. Ne5 Nxe5 19. Qe2 Qxc2 20. Qxe5 Bxe5 21. h3 Qd1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.1"]
+[White "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Black "Human"]
+[Result "0-1"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. Bxe7 Qxe7 7. f4 a6 8. Nf3 c5 9. Qd2 Nc6 10. O-O-O c4 11. g4 b5 12. f5 b4 13. Ne2 c3 14. Qe3 cxb2+ 15. Kxb2 Nb6 16. Ka1 Nc4 17. Qf2 a5 18. Nf4 a4 19. Bxc4 dxc4 20. d5 Na5 21. d6 Qb7 22. f6 g6 23. Nd5 exd5 24. e6 Bxe6 25. Rhe1 b3 26. d7+ Kxd7 27. Ne5+ Kc8 28. Qc5+ Qc7 29. Qxc7+ Kxc7 30. cxb3 axb3 31. axb3 Nxb3+ 32. Kb1 Ra1+ 33. Kb2 Rxd1 34. Rxd1 Ra8 35. Re1 Nc5 36. Re3 Ne4 37. Nxc4 dxc4 38. Rxe4 Rd8 39. Kc3 Rd3+ 40. Kc2 Rf3 41. g5 Kd6 42. Rd4+ Bd5 43. h4 Ke5 44. Rd2 Rg3 45. Rd1 Rh3 46. Re1+ Kd6 47. Re8 Rxh4 48. Rh8 Rh5 49. Rd8+ Ke5 50. Re8+ Be6 51. Kc3 Rh3+ 52. Kb2 Kf5 53. Rd8 Kxg5 54. Rh8 Kxf6 55. Rd8 Rd3 56. Rxd3 cxd3 57. Kc3 Bf5 58. Kd2 Ke5 59. Ke3 h5 60. Kd2 Kd4 61. Kd1 Kc3 62. Ke1 d2+ 63. Kf2 d1=Q 64. Kg3 Qg4+ 65. Kf2 Kd2 66. Kf1 Qf3+ 67. Kg1 Qg3+ 68. Kh1 Be4# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.2"]
+[White "gpt-6-astra (openai/gpt-6-astra)"]
+[Black "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Be7 8. Qf3 Qc7 9. O-O-O Nbd7 10. g4 b5 11. Bxf6 Nxf6 12. g5 Nd7 13. f5 Ne5 14. Qg3 b4 15. Nce2 O-O 16. f6 Bd8 17. Nf4 gxf6 18. gxf6+ Ng6 19. Ndxe6 Bxe6 20. Nxg6 hxg6 21. Qh4 Bxf6 22. Qxf6 Bxa2 23. Rg1 b3 24. Rxg6+ fxg6 25. Bc4+ Qxc4 26. Qxg6+ Kh8 27. Qh6+ Kg8 28. Qg6+ Kh8 29. Qh6+ Kg8 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.3"]
+[White "grok-4.7 (x-ai/grok-4.7)"]
+[Black "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d5 9. exd5 Nxd5 10. Nxe5 Nxe5 11. Rxe5 c6 12. d4 Bd6 13. Re1 Qh4 14. g3 Qh3 15. Re4 g5 16. Qf3 Bf5 17. Re1 Rae8 18. Qg2 Rxe1+ 19. Qf1 Rxf1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.4"]
+[White "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Black "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. O-O axb5 5. d4 exd4 6. Nxd4 Nxd4 7. Qxd4 Nf6 8. Qe5+ Be7 9. Nc3 O-O 10. Nxb5 c6 11. Nd4 Bd6 12. Qf5 g6 13. Qe6 fxe6 14. Bh6 Kh8 15. Bxf8 Qxf8 16. Nf3 Nxe4 17. Rfe1 Nxf2 18. Nd4 Bxh2+ 19. Kxh2 Qh6+ 20. Kg1 Qh2+ 21. Kxh2 Ng4+ 22. Kg3 Ne5 23. Rxe5 Kg8 24. c3 Kf8 25. Rf1+ Kg8 26. Rf7 Kxf7 27. Rg5 Kf6 28. Rf5+ gxf5 29. Nf3 f4+ 30. Kxf4 Ra4+ 31. Kg3 Rxa2 32. b3 Rxg2+ 33. Kxg2 Kf5 34. Nd4+ Ke5 35. Nf3+ Kd5 36. c4+ Kc5 37. Ng5 Kd6 38. Nxh7 Ke7 39. Ng5 Kf6 40. Ne4+ Kf5 41. Nd6+ Kf6 42. Nxc8 Kf7 43. Nd6+ Kg7 44. Nxb7 Kf6 45. c5 d6 46. Nxd6 Ke7 47. Kf3 Kd7 48. Ke4 Kc7 49. Ne8+ Kd8 50. Ke5 Kxe8 51. Kd6 Kf8 52. Kxe6 Kg8 53. Kd6 Kf8 54. Kxc6 Ke8 55. Kc7 Kf8 56. Kd7 Kg8 57. c6 Kf8 58. c7 Kg8 59. c8=Q+ Kh7 60. Qc2+ Kh8 61. Qh2+ Kg7 62. Qe5+ Kh7 63. Qh5+ Kg7 64. Qe5+ Kh6 65. Qh8+ Kg6 66. Qg8+ Kf6 67. Qe6+ Kg7 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.5"]
+[White "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Black "Jev (jev-latest)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4 4. Qh5 Qf6 5. Qxf7+ Qxf7 6. Nxf7 Kxf7 7. Bc4+ Ke7 8. d3 d6 9. dxe4 Nc6 10. O-O Nd4 11. Bg5+ Kd7 12. c3 Nc2 13. Bb5+ Ke6 14. Bc4+ Kd7 15. Bb5+ Ke6 16. Bc4+ 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.6"]
+[White "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Black "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Bxf7+ Kxf7 5. Nxe5+ Nxe5 6. Qh5+ Nxh5 7. Nc3 Nf3+ 8. gxf3 Nf6 9. d4 Nxe4 10. Nxe4 Bb4+ 11. Kd1 Bd6 12. Nxd6+ cxd6 13. d5 Qe7 14. Bf4 Qe5 15. Bxe5 dxe5 16. d6 Ke6 17. f4 Kxd6 18. fxe5+ Kxe5 19. Re1+ Kd6 20. Re6+ Kxe6 21. Ke2 Kd6 22. Rd1+ Ke7 23. Rxd7+ Bxd7 24. Kd3 Bf5+ 25. Kd4 Bxc2 26. Kd5 Be4+ 27. Kxe4 Ke6 28. Kd4 Rhd8+ 29. Kc5 Rdc8+ 30. Kb5 Rc5+ 31. Kxc5 Rc8+ 32. Kd4 Rd8+ 33. Ke3 Rd3+ 34. Kxd3 Kd6 35. Ke4 Kc6 36. Kd4 Kd6 37. Kc4 Kc6 38. Kd4 Kd6 39. Ke4 Kc6 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.7"]
+[White "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Black "glm-5.3 (z-ai/glm-5.3)"]
+[Result "1-0"]
+
+1. e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. d4 d6 5. exd6 exd6 6. Nc3 Be7 7. Nf3 O-O 8. Be2 Bg4 9. O-O Bxf3 10. Bxf3 Nxc4 11. Bxb7 Nd7 12. Bxa8 Qxa8 13. Qa4 Nxb2 14. Bxb2 Qxg2+ 15. Kxg2 Nb6 16. Qxa7 Nc4 17. Qxc7 Nxb2 18. Qxe7 Kh8 19. Qxf8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "3.8"]
+[White "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Black "kimi-k3 (moonshotai/kimi-k3)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. Nxe5 Nxe5 5. d4 Ng6 6. O-O Be7 7. Nc3 c6 8. Bc4 O-O 9. e5 Nd5 10. Nxd5 cxd5 11. Bxd5 Qc7 12. Bxb7 Bxb7 13. Qh5 Be4 14. Qxh7+ Kxh7 15. f3 Bd5 16. c4 Bxc4 17. Be3 Kg8 18. b3 Bxf1 19. Rxf1 Rfe8 20. f4 Qb6 21. f5 Nh4 22. f6 g6 23. fxe7 Rxe7 24. Bh6 Qxd4+ 25. Kh1 Qxe5 26. Rxf7 Rxf7 27. Bd2 Rf1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.1"]
+[White "Human"]
+[Black "gpt-6-astra (openai/gpt-6-astra)"]
+[Result "1-0"]
+
+1. d4 Nf6 2. Nf3 d5 3. e3 Bf5 4. h3 e6 5. g4 Bg6 6. Ne5 Bd6 7. h4 h5 8. Nxg6 fxg6 9. gxh5 Nxh5 10. Bd3 Qf6 11. Nc3 O-O 12. Qe2 Nc6 13. a3 e5 14. Nxd5 Qf7 15. Rg1 e4 16. Bc4 Na5 17. Ne7+ Bxe7 18. Bxf7+ Rxf7 19. Rxg6 Nf6 20. h5 Kh7 21. Bd2 Nc6 22. O-O-O Raf8 23. Rdg1 Kh8 24. h6 gxh6 25. Rxh6+ Nh7 26. Qh5 Rg8 27. Rh1 Rg5 28. Rxh7+ Kg8 29. Rh8+ Kg7 30. Qh6# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.2"]
+[White "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Black "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d6 9. h3 Na5 10. Bc2 c5 11. d4 Qc7 12. Nbd2 cxd4 13. cxd4 Nc6 14. Nb3 a5 15. d5 a4 16. dxc6 axb3 17. Bxb3 Qxc6 18. Qe2 Ba6 19. Nd2 b4 20. Qf3 Bb5 21. Nf1 Rfc8 22. Ne3 Qb7 23. Nd5 Nxd5 24. Bxd5 Bc6 25. Bxc6 Qxc6 26. Be3 Qc4 27. Rec1 Qb5 28. Qg4 Rxc1+ 29. Bxc1 Bf8 30. Qd1 Qc4 31. Qf3 Rxa2 32. Rxa2 Qxa2 33. Bd2 Qxb2 34. Be3 b3 35. Qd1 Qc2 36. Qxc2 bxc2 37. Bc1 Be7 38. Kf1 Kf8 39. Ke2 Ke8 40. Kd2 Bg5+ 41. Kxc2 Bxc1 42. Kxc1 Ke7 43. Kd2 Ke6 44. Kd3 d5 45. Ke3 d4+ 46. Kd3 Kd6 47. Kc4 Kc6 48. f3 g5 49. g3 h5 50. Kd3 Kc5 51. h4 gxh4 52. gxh4 f6 53. Kd2 Kc4 54. Kc2 d3+ 55. Kd2 Kd4 56. Ke1 Ke3 57. Kd1 d2 58. Kc2 Ke2 59. Kc3 d1=Q 60. Kc4 Qd6 61. Kb5 Kxf3 62. Kc4 Kxe4 63. Kb5 Kd5 64. Ka4 Qb6 65. Ka3 Kc4 66. Ka2 Kc3 67. Ka1 Qb2# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.3"]
+[White "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Black "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Bd6 7. O-O O-O 8. c4 c6 9. Nc3 Nxc3 10. bxc3 Re8 11. Qc2 Nd7 12. Bxh7+ Kh8 13. Bd3 Nf6 14. Bg5 g6 15. Bxg6 fxg6 16. Qxg6 Qe7 17. Bxf6+ Qxf6 18. Qxf6+ Kg8 19. Qxd6 Re6 20. Qg3+ Kh8 21. Ng5 Re7 22. Qh4+ Kg8 23. Qh7+ Rxh7 24. Nxh7 Kxh7 25. Rfe1 dxc4 26. Re7+ Kh8 27. Rae1 Kg8 28. Re8+ Kh7 29. R1e7+ Kg6 30. Rg8+ Kf6 31. Rge8 Kg6 32. Rg8+ Kf6 33. Rf8+ Kxe7 34. Rxc8 Rxc8 35. Kf1 Kd6 36. Ke2 Re8+ 37. Kf3 Rf8+ 38. Ke2 Re8+ 39. Kf3 Rf8+ 40. Ke3 Re8+ 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.4"]
+[White "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Black "grok-4.7 (x-ai/grok-4.7)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Bxf7+ Kxf7 5. Ng5+ Kg8 6. Qh5 Nxh5 7. Nf7 Kxf7 8. O-O Kg8 9. d4 Nxd4 10. c3 Ne2+ 11. Kh1 Qh4 12. g3 Qxe4+ 13. f3 Qd5 14. Rf2 Nxc1 15. Rc2 Qxf3+ 16. Rg2 Bc5 17. Na3 Nxg3+ 18. hxg3 Qd1+ 19. Kh2 Qh5# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.5"]
+[White "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Black "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d6 9. h3 Na5 10. Bc2 c5 11. d4 Qc7 12. Nbd2 Re8 13. Nf1 cxd4 14. cxd4 exd4 15. Nxd4 Nc4 16. b3 Ne5 17. f4 Nc4 18. bxc4 Qxc4 19. Ne3 Qxc2 20. Qxc2 Bb7 21. Bb2 Nxe4 22. Nef5 Nf6 23. Rad1 Bf8 24. Nb3 Rxe1+ 25. Rxe1 Re8 26. Nxd6 Rxe1+ 27. Kf2 Bxd6 28. Kxe1 Bxf4 29. Nc5 Bg3+ 30. Ke2 Bxg2 31. Nxa6 Bf3+ 32. Kxf3 Bd6 33. Qc8+ Ne8 34. Qxe8+ Bf8 35. Qxb5 Bd6 36. Qd5 Bf8 37. Nc7 Be7 38. Qd7 Bf8 39. Nd5 Kh8 40. Qxf7 Bd6 41. Qxg7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.6"]
+[White "kimi-k3 (moonshotai/kimi-k3)"]
+[Black "Jev (jev-latest)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4 4. Qe2 Qh4 5. Nf3 Qxf2+ 6. Qxf2 Nxf2 7. Kxf2 Bc5+ 8. Ke2 O-O 9. d4 Re8+ 10. Be3 Rxe3+ 11. Kxe3 Bxd4+ 12. Nxd4 d5 13. Nf3 Nc6 14. Nc3 Nb4 15. Kd2 Bg4 16. a3 Bxf3 17. gxf3 d4 18. axb4 dxc3+ 19. Kxc3 Rc8 20. Rxa7 Rb8 21. Kd4 Rd8+ 22. Ke5 Re8+ 23. Kf4 Re1 24. Rxb7 Rb1 25. Rb8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.7"]
+[White "glm-5.3 (z-ai/glm-5.3)"]
+[Black "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Result "1/2-1/2"]
+
+1. e4 Nf6 2. Nc3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. Nd5 Nxe4 6. Nxe7 Qxe7 7. Qh5 Nf6+ 8. Kf1 Nxh5 9. Nf3 Nf6 10. Nd4 Qe2+ 11. Nxe2 Bc5 12. Nf4 O-O 13. Kg1 Bxf2+ 14. Kxf2 Ne4+ 15. Kf3 Ng5+ 16. Kg3 Ne4+ 17. Kh4 g5+ 18. Kh5 Nf6+ 19. Kxg5 Ne4+ 20. Kh6 Nf6 21. Kg5 Ne4+ 22. Kh6 Nf6 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "4.8"]
+[White "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Black "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Result "1/2-1/2"]
+
+1. e4 c5 2. Nf3 Nc6 3. Nc3 d6 4. Bc4 Nf6 5. O-O d5 6. exd5 Nxd5 7. Bxd5 Qxd5 8. Nxd5 e6 9. Nc7+ Kd8 10. Nxa8 Be7 11. Nc7 Kxc7 12. Ne5 Nxe5 13. Qh5 g6 14. Qxe5+ Bd6 15. Qxh8 Bd7 16. Qxh7 Bxh2+ 17. Kxh2 f6 18. Qxd7+ Kxd7 19. Kg1 Kd6 20. Rd1 e5 21. c3 f5 22. Kh2 f4 23. Kg1 e4 24. Kh2 Ke5 25. d4+ exd3 26. Bxf4+ Kxf4 27. Rxd3 Ke4 28. Rd4+ cxd4 29. Re1+ Kd3 30. Re3+ dxe3 31. Kg3 e2 32. Kh2 e1=Q 33. Kg3 Qe5+ 34. Kh4 Qf6+ 35. Kg3 Qe5+ 36. Kh4 Qh8+ 37. Kg3 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.1"]
+[White "Human"]
+[Black "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Result "1-0"]
+
+1. d4 Nf6 2. Nf3 e6 3. e3 d5 4. Bd3 c5 5. c3 Nc6 6. Nbd2 Bd6 7. Qe2 O-O 8. dxc5 Bxc5 9. e4 Qc7 10. e5 Nd7 11. Nb3 Bb6 12. Bf4 f6 13. O-O Ndxe5 14. Nxe5 fxe5 15. Bg3 a6 16. Qh5 g6 17. Qh6 Qg7 18. Qd2 e4 19. Bc2 Bd7 20. Bd6 Rfd8 21. Nc5 Bxc5 22. Bxc5 Ne5 23. Bd4 Nc4 24. Qc1 e5 25. Bc5 b6 26. Be3 Nxe3 27. Qxe3 b5 28. Bb3 Be6 29. Rad1 a5 30. Qc5 Rab8 31. Bxd5 Bxd5 32. Rxd5 Rxd5 33. Qxd5+ Kh8 34. Qxe4 Rd8 35. Qe3 Qf6 36. h3 Kg8 37. Re1 Re8 38. Qc5 Rb8 39. Qxe5 Qxe5 40. Rxe5 Kf7 41. f4 Kf6 42. Kf2 Rd8 43. Ke3 Rd1 44. Rxb5 Re1+ 45. Kf2 Rb1 46. a4 h6 47. b4 axb4 48. cxb4 Rxb4 49. Rxb4 Ke6 50. a5 Kd5 51. a6 Kc5 52. Rb8 Kc6 53. a7 Kc7 54. a8=Q Kd7 55. Qa6 Ke7 56. Rb7+ Kf8 57. Qa8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.2"]
+[White "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Black "gpt-6-astra (openai/gpt-6-astra)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Bd2 Bxd2+ 8. Nbxd2 d5 9. exd5 Nxd5 10. Qb3 Na5 11. Qa4+ Nc6 12. Bb5 O-O 13. O-O Bd7 14. Qb3 Nf6 15. Rfe1 Nxd4 16. Nxd4 Bxb5 17. Qxb5 Qxd4 18. Nf3 Qd5 19. Qxd5 Nxd5 20. Rad1 Rad8 21. Re5 Nc3 22. Rxd8 Rxd8 23. bxc3 Rd1+ 24. Re1 Rd8 25. Re7 Kf8 26. Re1 Rd3 27. Rc1 Ke7 28. Kf1 Kd6 29. Ke2 Rd5 30. c4 Ra5 31. Rc2 Kc5 32. Nd2 Kb4 33. Rb2+ Kc3 34. Rxb7 Rxa2 35. Ke3 Rxd2 36. Rxc7 Rd3+ 37. Ke4 a5 38. Rxf7 Kxc4 39. Rc7+ Kb3 40. Kxd3 a4 41. Rb7+ Ka2 42. Kc2 Ka3 43. Rxg7 h5 44. Rh7 Kb4 45. Rxh5 Ka3 46. Rb5 Ka2 47. Ra5 Ka3 48. Kc3 Ka2 49. Rxa4+ Kb1 50. Kb3 Kc1 51. Rd4 Kb1 52. Rd1# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.3"]
+[White "grok-4.7 (x-ai/grok-4.7)"]
+[Black "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d6 9. h3 Bb7 10. d4 Re8 11. Nbd2 Bf8 12. Nf1 Na5 13. Bc2 exd4 14. cxd4 Nc4 15. b3 Nb6 16. Ng3 d5 17. e5 Nfd7 18. Bf4 c5 19. Nf5 g6 20. Ne3 Qc7 21. Rc1 Bc6 22. Bd3 Bg7 23. Qe2 cxd4 24. Nxd4 Nxe5 25. Bxe5 Rxe5 26. Ng4 Rxe2 27. Rxe2 Bxd4 28. Nh6+ Kg7 29. Ng4 Qf4 30. Rxc6 h5 31. Nf6 Qc1+ 32. Rxc1 Bxf6 33. Rc7 Rf8 34. Rc6 Nd7 35. Rxa6 Nc5 36. Rd6 Rb8 37. Rxd5 Ne6 38. Rd7 Nc5 39. Rd5 Nb7 40. Rxb5 Nd6 41. Rxb8 Bd4 42. Rd8 Nb7 43. Rxd4 Nc5 44. Rd5 Nb7 45. Rd7 Nc5 46. Bc4 Nxd7 47. Re7 Nc5 48. Re5 Nd7 49. Re7 Nf6 50. Rxf7+ Kh8 51. Rxf6 Kg7 52. Bd3 Kxf6 53. Be4 Kg5 54. a4 h4 55. a5 Kf6 56. a6 Kf7 57. a7 Kf6 58. a8=Q Kg5 59. Qd5+ Kf6 60. Qf5+ gxf5 61. b4 fxe4 62. Kf1 Ke5 63. b5 Kd6 64. Ke2 Kd5 65. Ke3 Ke5 66. f4+ Kd5 67. b6 Kc6 68. Kxe4 Kxb6 69. f5 Kc6 70. Ke5 Kd7 71. f6 Ke8 72. Ke6 Kf8 73. Kd7 Kg8 74. Ke8 Kh7 75. f7 Kg6 76. f8=Q Kg5 77. Qg7+ Kf5 78. Qf7+ Ke4 79. Qc4+ Ke3 80. Qxh4 Ke2 81. Qe4+ Kf2 82. Qc2+ Kg3 83. Qe2 Kf4 84. Qf3+ Ke5 85. Qh5+ Kf4 86. Qh4+ Ke3 87. Qg5+ Ke4 88. Qg4+ Ke3 89. Qg3+ Kd4 90. Qd6+ Ke3 91. Qg3+ Ke4 92. Qg4+ Kd5 93. Qf5+ Kd4 94. Qf4+ Kd3 95. Qd6+ Ke4 96. Qe6+ Kf4 97. Qf6+ Kg3 98. Qg5+ Kf2 99. Qd2+ Kg3 100. Qg5+ Kf2 101. Qd2+ Kg3 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.4"]
+[White "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Black "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 O-O 8. c3 d6 9. d4 Bg4 10. h3 Bh5 11. Nbd2 exd4 12. cxd4 Nxd4 13. Nxd4 Bxd1 14. Bxd1 Qd7 15. Nf5 Nxe4 16. Nxe4 Qxf5 17. Ng3 Qf6 18. Nh5 Qg6 19. Rxe7 Rae8 20. Rxc7 Re1+ 21. Kh2 Rxd1 22. Nf4 Qg5 23. Be3 Rxa1 24. Rc6 Qe5 25. Rxa6 Qxb2 26. Rxd6 Qb4 27. Rd7 Rxa2 28. Rc7 Qd6 29. Bc5 Qxf4+ 30. Kg1 Ra1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.5"]
+[White "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Black "kimi-k3 (moonshotai/kimi-k3)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Bxf7+ Kxf7 5. Nxe5+ Nxe5 6. Qh5+ Nxh5 7. d4 Kg8 8. dxe5 Be7 9. O-O Bc5 10. e6 dxe6 11. Nc3 Nf6 12. Nd5 exd5 13. exd5 Qxd5 14. Re1 Qf7 15. Re8+ Qxe8 16. Kf1 Qe7 17. Kg1 Qe1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.6"]
+[White "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Black "Jev (jev-latest)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4 4. Qe2 Qh4 5. Qxe4 Qxe4+ 6. Be2 Qxe2+ 7. Kxe2 Ke7 8. Nxf7 Kxf7 9. Nc3 Bb4 10. Nd5 Re8+ 11. Ne7 Rxe7+ 12. Kf1 Re1+ 13. Kxe1 Bxd2+ 14. Bxd2 Ke7 15. Bg5+ Kf8 16. Be7+ Kxe7 17. Rd1 Nc6 18. Rxd7+ Bxd7 19. Ke2 Nd4+ 20. Kd3 Bf5+ 21. Kxd4 Rd8+ 22. Ke3 Bxc2 23. Rc1 Rc8 24. Rxc2 Rd8 25. Rxc7+ Kd6 26. Rxb7 Re8+ 27. Re7 Rxe7+ 28. Kf4 Rf7+ 29. Kg5 Rxf2 30. Kh5 Rf5+ 31. Kg4 Rf1 32. Kh5 Rf5+ 33. Kh4 Rf4+ 34. Kg3 Rg4+ 35. Kxg4 h5+ 36. Kxh5 g6+ 37. Kxg6 a5 38. Kh7 a4 39. Kg7 Kd7 40. h4 Ke7 41. h5 Kd7 42. h6 Kd8 43. h7 Kc7 44. h8=Q Kd7 45. Qd8+ Kxd8 46. Kf7 Kd7 47. Kg6 a3 48. bxa3 Kd8 49. Kf7 Kd7 50. g4 Kd8 51. g5 Kd7 52. g6 Kd8 53. g7 Kd7 54. g8=Q Kc7 55. Qc8+ Kxc8 56. Ke7 Kc7 57. a4 Kc8 58. Ke8 Kc7 59. Kf7 Kd8 60. Ke6 Kc8 61. Kd6 Kd8 62. Ke6 Kc8 63. Ke7 Kc7 64. a5 Kc8 65. Kd6 Kd8 66. Ke6 Kc8 67. a6 Kd8 68. a7 Kc8 69. a8=R+ Kb7 70. Ra7+ Kxa7 71. a4 Kb6 72. a5+ Kxa5 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.7"]
+[White "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Black "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Result "0-1"]
+
+1. e4 Nf6 2. e5 d5 3. exf6 gxf6 4. Nf3 Bg7 5. d4 Nc6 6. Bb5 Bf5 7. O-O e6 8. Bxc6+ bxc6 9. Nc3 c5 10. Nxd5 exd5 11. Re1+ Be6 12. Rxe6+ fxe6 13. dxc5 Qd6 14. cxd6 cxd6 15. Qxd5 exd5 16. Nd4 O-O 17. Ne6 Rfe8 18. Nxg7 Re1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "5.8"]
+[White "glm-5.3 (z-ai/glm-5.3)"]
+[Black "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Result "1/2-1/2"]
+
+1. e4 Nf6 2. e5 Ng8 3. d4 d5 4. Bb5+ c6 5. Bxc6+ bxc6 6. Nf3 Qa5+ 7. Qd2 Qxd2+ 8. Bxd2 Nh6 9. O-O Ng8 10. Nc3 f6 11. exf6 gxf6 12. Bh6 Nxh6 13. Nh4 Rg8 14. Nf5 Bxf5 15. Nxd5 cxd5 16. Rfd1 Bxc2 17. Rac1 Bxd1 18. Rxd1 Rxg2+ 19. Kxg2 Kf7 20. Rd3 Nf5 21. Rd2 Nxd4 22. Rxd4 Ke6 23. Rxd5 Kxd5 24. Kg3 Kc5 25. Kf3 Kb4 26. Ke3 Kc5 27. Ke4 Kb5 28. Kd5 Nc6 29. Ke6 Nd4+ 30. Kd5 Ne6 31. Kxe6 Kc6 32. Kf7 Kb6 33. Kg8 Bg7+ 34. Kxg7 Rg8+ 35. Kxg8 Kc7 36. Kxh7 Kb6 37. Kg6 Kc6 38. Kh7 Kb7 39. Kg6 Kc6 40. Kf7 Kb7 41. Kxe7 Ka8 42. Kxf6 Kb8 43. Kg7 Kc8 44. b4 Kb7 45. Kf6 Ka6 46. Kf5 Kb6 47. Ke5 Kb7 48. Kf6 Ka6 49. Kg7 Kb7 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "6.1"]
+[White "Human"]
+[Black "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Result "1-0"]
+
+1. d4 Nf6 2. Nf3 d5 3. e3 e6 4. Bd3 Be7 5. Nbd2 O-O 6. e4 dxe4 7. Nxe4 Nc6 8. c3 Bd7 9. Qe2 Re8 10. O-O Nd5 11. Nfg5 Nf4 12. Bxf4 h6 13. Qh5 Bxg5 14. Bxg5 Qxg5 15. Nxg5 hxg5 16. Qxg5 g6 17. h4 Rf8 18. h5 Kg7 19. hxg6 Kh8 20. Qh6+ Kg8 21. Qh7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "6.2"]
+[White "grok-4.7 (x-ai/grok-4.7)"]
+[Black "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Nxe5 Be7 7. Bf1 Nxe5 8. Rxe5 O-O 9. Nc3 Bf6 10. Re1 Re8 11. Bd3 Rxe1+ 12. Qxe1 b6 13. Nd5 Bb7 14. Qe3 Bxd5 15. Qf4 Qe7 16. Qg4 Qe1+ 17. Bf1 Bc4 18. Qxd7 Qxf1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "6.3"]
+[White "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Black "kimi-k3 (moonshotai/kimi-k3)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Nxe5 Nxb5 7. Nxc6+ Qe7 8. Nxe7 Bxe7 9. Nc3 Nd4 10. Nd5 Ne2+ 11. Rxe2 c6 12. Nxe7 Kf8 13. Nxc8 Rxc8 14. d4 Re8 15. Rxe8+ Kxe8 16. Qe2+ Kd8 17. Bg5+ Kc8 18. Qe7 Kb8 19. Qxf7 Rc8 20. Qxd7 Rc7 21. Bf4 Ka8 22. Bxc7 b5 23. Qc8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "6.4"]
+[White "gpt-6-astra (openai/gpt-6-astra)"]
+[Black "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Result "1-0"]
+
+1. e4 Nf6 2. e5 d5 3. exf6 gxf6 4. Nf3 Bg7 5. d4 Nc6 6. Bd3 Nxd4 7. Nxd4 Bf5 8. Nxf5 Qd6 9. Nxd6+ exd6 10. O-O O-O 11. Qh5 Bh6 12. Bxh6 Rfe8 13. Qg4+ Kh8 14. Qg7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "6.5"]
+[White "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Black "Jev (jev-latest)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4 4. Qe2 Qh4 5. Nf3 Qxf2+ 6. Qxf2 Nxf2 7. Kxf2 Bc5+ 8. d4 O-O 9. dxc5 Nc6 10. Nc3 Nb4 11. Nd4 Nd3+ 12. Bxd3 Rd8 13. Re1 Rf8 14. Bg5 Kh8 15. Be7 Re8 16. Bg5 Rxe1 17. Rxe1 Kg8 18. Re8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "6.6"]
+[White "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Black "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Nxe5 Be7 7. d4 O-O 8. Nxc6 dxc6 9. Bd3 Bf5 10. Bxf5 Nxf5 11. Nc3 Qxd4 12. Qxd4 Nxd4 13. Rxe7 Nf3+ 14. gxf3 Rfe8 15. Rxe8+ Rxe8 16. Bf4 Re1+ 17. Rxe1 Kf8 18. Bxc7 Kg8 19. Re8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "6.7"]
+[White "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Black "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Result "1/2-1/2"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 Nc6 4. Nf3 Nxe5 5. dxe5 Nb4 6. Qxd7+ Kxd7 7. Bb5+ Ke6 8. Bc4+ Kd7 9. e6+ fxe6 10. Bxe6+ Kxe6 11. Ng5+ Kf6 12. Ne4+ Ke5 13. f4+ Kxe4 14. Nd2+ Kxf4 15. Nc4+ Ke4 16. Nd6+ Qxd6 17. O-O Qxh2+ 18. Kxh2 Nxc2 19. Re1+ Nxe1 20. Bd2 Nf3+ 21. gxf3+ Kxf3 22. Rf1+ Ke4 23. Rf4+ Kd5 24. Rxf8 Rxf8 25. Kg3 Rf3+ 26. Kxf3 Bg4+ 27. Kxg4 Kc6 28. Bf4 Kb6 29. Bxc7+ Kxc7 30. b4 Kb6 31. b5 Kxb5 32. a4+ Kxa4 33. Kf5 Rf8+ 34. Ke6 Rf6+ 35. Kxe7 Rf7+ 36. Kxf7 Kb5 37. Kxg7 Kb6 38. Kxh7 Ka6 39. Kg6 Kb6 40. Kf6 Ka6 41. Ke7 Kb6 42. Kd7 Ka6 43. Kc7 Ka5 44. Kxb7 Kb5 45. Kxa7 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.22"]
+[Round "6.8"]
+[White "glm-5.3 (z-ai/glm-5.3)"]
+[Black "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Result "1-0"]
+
+1. e4 c5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. O-O Nf6 6. Nc3 Nxe4 7. Nxe4 Qd5 8. Nc3 e6 9. Nxd5 exd5 10. Re1+ Be7 11. Ne5 O-O 12. Nxc6 bxc6 13. Rxe7 Re8 14. Rxe8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.1"]
+[White "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Black "Human"]
+[Result "0-1"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Be7 5. e5 Nfd7 6. Bxe7 Qxe7 7. f4 a6 8. Nf3 c5 9. Bd3 Nc6 10. O-O cxd4 11. Ne2 Nb4 12. Nexd4 Nxd3 13. Qxd3 h6 14. Rae1 Nc5 15. Qe3 O-O 16. f5 Ne4 17. Qf4 exf5 18. Nd2 g5 19. Nxf5 Bxf5 20. Qxf5 Nxd2 21. Qd3 Nxf1 22. Kxf1 Rad8 23. Qf5 Qe6 24. Qd3 Qg4 25. Qe3 Qf4+ 26. Kg1 Qxe3+ 27. Rxe3 Rfe8 28. Kf2 Re6 29. Ke2 Rde8 30. Kd3 Rxe5 31. Rxe5 Rxe5 32. Kd4 Re2 33. Kxd5 Rxc2 34. g3 Rxb2 35. a4 Rxh2 36. Kc5 Rb2 37. Kd6 a5 38. Kc7 h5 39. Kd6 h4 40. gxh4 gxh4 41. Kc7 h3 42. Kd7 h2 43. Kc7 h1=Q 44. Kd6 Qh5 45. Kc7 Qc5+ 46. Kd7 Rd2+ 47. Ke8 Qe5# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.2"]
+[White "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Black "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Result "1-0"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3 e5 7. Nb3 Be6 8. f3 Be7 9. Qd2 O-O 10. O-O-O Nbd7 11. g4 b5 12. g5 Ne8 13. h4 b4 14. Nd5 Bxd5 15. exd5 a5 16. Kb1 a4 17. Nc1 a3 18. b3 Nc7 19. Qxb4 Na6 20. Qd2 Nac5 21. Bc4 Nb6 22. Bxc5 dxc5 23. d6 Nxc4 24. bxc4 Rb8+ 25. Ka1 Rb1+ 26. Kxb1 Qb6+ 27. Nb3 Bxd6 28. Qxd6 Qxd6 29. Rxd6 Rb8 30. Rhd1 Kf8 31. Rd8+ Rxd8 32. Rxd8+ Ke7 33. Rh8 Kd6 34. Rxh7 Ke6 35. Rxg7 Ke7 36. h5 Kf8 37. Rh7 Kg8 38. Rh6 Kg7 39. Rc6 Kf8 40. Rxc5 Ke7 41. Rxe5+ Kd6 42. f4 Kd7 43. h6 Kd6 44. h7 Kd7 45. h8=Q Kc7 46. Re7+ Kd6 47. Qf6# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.3"]
+[White "gpt-6-astra (openai/gpt-6-astra)"]
+[Black "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Nd6 6. Bxc6 dxc6 7. dxe5 Nf5 8. Qxd8+ Kxd8 9. Nc3 Ke8 10. Rd1 Be6 11. Ng5 h6 12. Nxe6 fxe6 13. Ne4 Ke7 14. Bf4 Kf7 15. Rd7+ Ke8 16. Rxc7 Kd8 17. Rxb7 Rg8 18. Rd1+ Kc8 19. Rf7 Kb8 20. Rd8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.4"]
+[White "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Black "grok-4.7 (x-ai/grok-4.7)"]
+[Result "0-1"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 Bg4 5. c4 Nb6 6. Nc3 Nc6 7. Be2 e6 8. O-O Be7 9. h3 Bh5 10. Bf4 Nxc4 11. Bxc4 O-O 12. d5 Nxe5 13. Nxe5 Bxd1 14. Raxd1 dxe5 15. Bxe5 Qd7 16. dxe6 Qc6 17. exf7+ Kh8 18. Bd3 Rxf7 19. Rfe1 Bb4 20. Re3 Qc5 21. Ne4 Qxe5 22. Re2 Rd8 23. Bc4 Rxd1+ 24. Re1 Rxe1+ 25. Bf1 Qxe4 26. g3 Qf3 27. Kh2 Rxf1 28. h4 Rh1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.5"]
+[White "kimi-k3 (moonshotai/kimi-k3)"]
+[Black "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Result "1-0"]
+
+1. e4 Nf6 2. e5 d5 3. exf6 gxf6 4. Qh5 Bg7 5. Nf3 Bg4 6. Qxg4 Nc6 7. Qxg7 Ne5 8. Qxh8+ Kd7 9. Qxh7 Nxf3+ 10. gxf3 Qf8 11. Qf5+ e6 12. Bb5+ c6 13. Qxf6 cxb5 14. O-O Qg8+ 15. Kh1 Qg2+ 16. Kxg2 Rg8+ 17. Kh1 Rg1+ 18. Kxg1 Kd6 19. Qxf7 Ke5 20. Qg7+ Kf4 21. Qf6# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.6"]
+[White "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Black "glm-5.3 (z-ai/glm-5.3)"]
+[Result "1/2-1/2"]
+
+1. e4 Nf6 2. e5 Nc6 3. exf6 gxf6 4. d4 d5 5. Bd3 Nxd4 6. Bb5+ Nxb5 7. Qxd5 Qxd5 8. Nc3 Qxg2 9. Nxb5 Qxg1+ 10. Rxg1 Rg8 11. Rxg8 a6 12. Rxf8+ Kxf8 13. Nxc7 Kg7 14. Nxa8 Bh3 15. Bh6+ Kxh6 16. Nb6 Kg7 17. Nd5 e6 18. Nxf6 Kxf6 19. O-O-O Bf5 20. Rd6 Be4 21. Rxe6+ Kxe6 22. Kd2 Bg2 23. Ke3 Kd5 24. Kf4 Kd4 25. c3+ Kd5 26. c4+ Kxc4 27. b3+ Kd5 28. Ke3 Kd6 29. Kf4 Kd5 30. Kf5 Kd6 31. Kf6 Kd7 32. Kxf7 Kc8 33. Ke7 Kb8 34. Kd7 Bh3+ 35. Kd6 Bf1 36. Kc5 Ka7 37. Kd6 Kb6 38. Ke7 Kc7 39. Kf8 Kb6 40. Ke8 Kc7 41. Kf8 Kd8 42. Kg7 Ke8 43. Kxh7 Bd3+ 44. Kh8 Kf7 45. h4 Kg6 46. Kg8 Bc4+ 47. bxc4 Kh6 48. h5 Kxh5 49. f4 Kh6 50. f5 Kh5 51. f6 Kg6 52. f7 Kf6 53. f8=Q+ Kg6 54. Qh6+ Kxh6 55. c5 Kg5 56. c6 bxc6 57. a4 Kg4 58. a5 c5 59. Kh7 c4 60. Kg6 c3 61. Kf6 c2 62. Ke5 c1=Q 63. Kd5 Qg5+ 64. Ke6 Qg8+ 65. Kf6 Qh8+ 66. Ke7 Qh7+ 67. Kf8 Qh8+ 68. Ke7 Qa8 69. Kf7 Qd5+ 70. Ke7 Qxa5 71. Kf6 Qd8+ 72. Ke6 Qh8 73. Kf7 Qh7+ 74. Kf8 Qh8+ 75. Ke7 Qe5+ 76. Kf7 Qe8+ 77. Kxe8 a5 78. Kf8 a4 79. Ke7 a3 80. Kf6 a2 81. Ke5 a1=Q+ 82. Ke4 Qh8 83. Kd5 Qf6 84. Kc5 Qf8+ 85. Kc6 Qc8+ 86. Kd6 Kg5 87. Ke7 Qe8+ 88. Kxe8 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.7"]
+[White "Jev (jev-latest)"]
+[Black "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Result "1/2-1/2"]
+
+1. e4 Nf6 2. Nf3 Nxe4 3. Qe2 Nf6 4. Nc3 Nc6 5. d3 e5 6. Qxe5+ Nxe5 7. Nxe5 Be7 8. Nf3 O-O 9. d4 Re8 10. Be2 Bf8 11. O-O Be7 12. Re1 Bf8 13. Bg5 h6 14. Bxf6 gxf6 15. Nd5 Rxe2 16. Rxe2 Be7 17. Nxe7+ Qxe7 18. Rxe7 Kf8 19. Rxf7+ Kxf7 20. Rf1 Kg8 21. d5 Rb8 22. Rb1 c6 23. d6 c5 24. Rd1 Ra8 25. Rd5 Rb8 26. Rxc5 Kf7 27. Rxc8 Rxc8 28. Nd4 Rxc2 29. Nxc2 Ke6 30. Nd4+ Kxd6 31. Nb5+ Kc6 32. Nxa7+ Kb6 33. Nc8+ Kc7 34. Ne7 Kd6 35. Nf5+ Ke6 36. Ng7+ Kf7 37. Nf5 Ke6 38. Ng7+ Kf7 39. Nf5 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "7.8"]
+[White "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Black "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Result "0-1"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nxe4 6. Nxe4 Nxd4 7. Qxd4 d6 8. Bb5+ Bd7 9. Bxd7+ Qxd7 10. Nf6+ exf6 11. Qe4+ Be7 12. Qxe7+ Kxe7 13. O-O d5 14. Re1+ Kd8 15. Bf4 Qc6 16. Bc7+ Kxc7 17. Re7+ Kd6 18. Rd7+ Kxd7 19. Rd1 Qxc2 20. Rxd5+ Kc6 21. Rc5+ Kxc5 22. b4+ Kxb4 23. a3+ Kxa3 24. Kh1 Qd1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.1"]
+[White "grok-4.7 (x-ai/grok-4.7)"]
+[Black "Human"]
+[Result "0-1"]
+
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. Nf3 c5 6. Be2 Nc6 7. O-O Qb6 8. Na4 Qc7 9. Be3 cxd4 10. Nxd4 Ndxe5 11. Nb5 Qd8 12. Bf4 a6 13. Nbc3 Bd6 14. Re1 Qa5 15. b3 b5 16. Nb2 Qxc3 17. Rb1 O-O 18. Bh5 Qc5 19. Qd2 Nd7 20. Nd3 Bxf4 21. Nxc5 Bxd2 22. Red1 Nxc5 23. Rxd2 Ne4 24. Rd3 Nb4 25. Rd4 Nxc2 26. Rd3 Bb7 27. f3 Nb4 28. Rd4 Nf6 29. Rxb4 Nxh5 30. Rh4 Nf6 31. Rc1 Rac8 32. Rd4 Rxc1+ 33. Kf2 Rfc8 34. Rd2 R8c2 35. Ke3 Rxd2 36. Kxd2 Rh1 37. Ke3 Rxh2 38. Kf2 d4 39. Ke2 Rxg2+ 40. Kd3 e5 41. a3 Bxf3 42. b4 Be4# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.2"]
+[White "kimi-k3 (moonshotai/kimi-k3)"]
+[Black "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Rxe5+ Nxe5 7. Nxe5 Nxb5 8. Nxf7 Kxf7 9. Qh5+ Ke7 10. Qe5+ Kf7 11. Qxb5 c6 12. Qf5+ Qf6 13. Qh5+ Kg8 14. Qe8 Qe7 15. Qh5 Qe1# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.3"]
+[White "gpt-6-astra (openai/gpt-6-astra)"]
+[Black "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Bd6 7. O-O O-O 8. c4 c6 9. Nc3 Nxc3 10. bxc3 Nd7 11. Re1 Nf6 12. Bg5 h6 13. Bh4 g5 14. Bg3 g4 15. Ne5 Bxe5 16. dxe5 Nh5 17. e6 fxe6 18. Qxg4+ Kh8 19. Be5+ Nf6 20. Qg6 Qe7 21. Qxh6+ Kg8 22. Bh7+ Qxh7 23. Qg5+ Qg7 24. Bxf6 Qxg5 25. Bxg5 dxc4 26. Re4 Rf5 27. Be3 e5 28. Rxc4 Be6 29. Rg4+ Kh8 30. Rd1 Rff8 31. Rh4+ Kg8 32. Bc5 Rf7 33. Rd6 Bxa2 34. Rg6+ Rg7 35. Rgh6 Rf7 36. Rh8+ Kg7 37. Rxa8 Kf6 38. Rxa7 Kg5 39. Rha4 Be6 40. Ra8 b5 41. Re4 Bf5 42. Rxe5 Rg7 43. Rf8 Kf4 44. Rfxf5+ Kg4 45. h3+ Kh4 46. Rh5# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.4"]
+[White "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Black "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6 8. Be2 h6 9. Nf3 e4 10. Ne5 Bd6 11. d4 exd3 12. Nxd3 O-O 13. O-O Bf5 14. Nc3 Qc7 15. h3 Rad8 16. Be3 Rfe8 17. Qc1 Bxd3 18. Bxd3 Bc5 19. Bxc5 Qe5 20. Bxa7 Rxd3 21. cxd3 Ra8 22. Bb6 Ra6 23. Bxa5 Rxa5 24. Re1 Qf5 25. Qe3 Ra8 26. d4 Qc2 27. Re2 Qf5 28. Rae1 Rd8 29. Qe5 Qd7 30. Qc5 Nd5 31. Nxd5 cxd5 32. Re7 Qf5 33. Re8+ Rxe8 34. Rxe8+ Kh7 35. Qf8 Qf6 36. Qh8+ Kg6 37. Rg8 Qxd4 38. Qxg7+ Qxg7 39. Rxg7+ Kxg7 40. Kf1 Kf6 41. Ke2 Ke5 42. Kd3 Kf4 43. Kd4 Kf5 44. Kxd5 Kf4 45. a4 f5 46. a5 h5 47. a6 h4 48. a7 Kg5 49. a8=Q Kf4 50. Qb8+ Kg5 51. Qg8+ Kf6 52. Qf8+ Kg6 53. Qg8+ Kf6 54. Qf8+ Kg6 55. Ke6 Kh7 56. Qf7+ Kh6 57. Qf6+ Kh7 58. Kf7 f4 59. Qg7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.5"]
+[White "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Black "glm-5.3 (z-ai/glm-5.3)"]
+[Result "1-0"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. Nf3 dxe5 6. c5 Nd5 7. Nxe5 Nf6 8. Bb5+ c6 9. Bxc6+ bxc6 10. Nxf7 Kxf7 11. Qb3+ Kg6 12. Qg3+ Kh5 13. Qg5# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.6"]
+[White "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Black "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Bxc6 dxc6 6. Nxe5 Qd5 7. Nxf7 Qxf7 8. Qe2 Be6 9. Qxe4 O-O-O 10. Qxe6+ Qxe6 11. Nc3 Bd6 12. Nd5 Qxd5 13. Kh1 Qxg2+ 14. Kxg2 Rhf8 15. Kg1 Bxh2+ 16. Kxh2 Rxf2+ 17. Rxf2 Rd3 18. cxd3 Kd7 19. Rf7+ Ke6 20. Rxg7 Kf6 21. Rf7+ Kxf7 22. Kg2 Kg6 23. Kg3 Kf5 24. Kf3 Ke5 25. Rb1 Kd4 26. Ra1 Kxd3 27. Rb1 Kc2 28. Ra1 Kd1 29. Rb1 Kc2 30. Ra1 Kd3 31. Rb1 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.7"]
+[White "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Black "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. Bxf7+ Kxf7 5. Nxe5+ Nxe5 6. Qh5+ g6 7. Qxe5 Nf6 8. Qxc5 d6 9. Qc4+ Be6 10. Qxe6+ Kxe6 11. d4 Nxe4 12. d5+ Kxd5 13. Nc3+ Nxc3 14. bxc3 Qe7+ 15. Be3 Qxe3+ 16. fxe3 Rhe8 17. O-O-O+ Ke6 18. Rxd6+ Kxd6 19. Rd1+ Ke7 20. Rd7+ Kxd7 21. Kd2 Rxe3 22. Kxe3 Re8+ 23. Kf4 Re4+ 24. Kxe4 Ke7 25. Kd5 Kf6 26. Kc5 b6+ 27. Kc6 Ke7 28. Kxc7 Kf6 29. Kd6 Kg7 30. Ke5 Kf7 31. Kd6 Kf6 32. Kd7 Kf7 33. Kd6 Kf6 34. Kd7 Ke5 35. c4 Kf6 36. c5 bxc5 37. Kd6 Kf7 38. Kxc5 Kf6 39. Kd6 Kf7 40. Kd7 Kf6 41. Kd6 Kg7 42. Ke7 Kh8 43. Kf6 Kg8 44. Kg5 Kh8 45. Kh6 Kg8 46. g4 Kh8 47. g5 Kg8 48. h4 Kh8 49. h5 gxh5 50. Kxh5 Kg7 51. c4 h6 52. gxh6+ Kh8 53. h7 Kxh7 54. c5 a5 55. c6 Kg7 56. c7 Kf6 57. c8=Q Ke5 58. Qc5+ Kf6 59. Qf8+ Ke6 60. Qe8+ Kf6 61. Qh8+ Kf7 62. Qh7+ Kf8 63. Qg8+ Kxg8 64. a4 Kh8 65. Kg6 Kg8 66. Kf6 Kh8 67. Kg6 Kg8 68. Kh6 Kh8 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "8.8"]
+[White "Jev (jev-latest)"]
+[Black "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Result "1-0"]
+
+1. e4 c5 2. Nf3 Nc6 3. Nc3 d6 4. Bc4 Nf6 5. O-O Nxe4 6. Nxe4 d5 7. Nxc5 dxc4 8. Nxb7 Bxb7 9. Qe2 Qd6 10. Qxc4 O-O-O 11. Rd1 Qxd2 12. Rxd2 Rxd2 13. Bxd2 Kb8 14. Bf4+ e5 15. Bxe5+ Nxe5 16. Nxe5 f6 17. Nd7+ Ka8 18. Nxf8 Rxf8 19. Rf1 Rd8 20. Rc1 Rd2 21. Qg8+ Bc8 22. Qxc8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.1"]
+[White "Human"]
+[Black "kimi-k3 (moonshotai/kimi-k3)"]
+[Result "1-0"]
+
+1. d4 Nf6 2. Nf3 d5 3. e3 Bf5 4. h3 e6 5. g4 Bg6 6. Ne5 Be4 7. f3 Bg6 8. h4 Bd6 9. h5 Bd3 10. Bxd3 O-O 11. g5 Nfd7 12. f4 Bb4+ 13. c3 Be7 14. Bxh7+ Kxh7 15. g6+ Kg8 16. gxf7+ Kh7 17. Qd3+ Kh6 18. Qg6# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.2"]
+[White "gemini-3.8-flash (google/gemini-3.8-flash)"]
+[Black "Jev (jev-latest)"]
+[Result "1-0"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 Nc6 4. c4 Nb6 5. Nf3 e6 6. Nc3 Be7 7. d5 O-O 8. dxc6 bxc6 9. Bd3 Nxc4 10. Bxc4 c5 11. O-O Bb7 12. Be3 Bxf3 13. Qxf3 Rc8 14. Rad1 Re8 15. Ne4 Rf8 16. Qg4 Qe8 17. Bh6 Kh8 18. Qxg7# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.3"]
+[White "grok-4.7 (x-ai/grok-4.7)"]
+[Black "gpt-6-astra (openai/gpt-6-astra)"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. Re1 Nd6 6. Nxe5 Be7 7. Bf1 Nxe5 8. Rxe5 O-O 9. Nc3 Bf6 10. Re1 Re8 11. Nd5 c6 12. Nf4 Rxe1 13. Qxe1 Qe8 14. Bd3 Qxe1+ 15. Bf1 Bd4 16. Nd3 Qe4 17. Nb4 Qh4 18. Nd3 Ne4 19. Be2 Bxf2+ 20. Kf1 Qxh2 21. Bg4 Qh1+ 22. Ke2 Qxg2 23. Nf4 Qxg4+ 24. Kf1 Qxf4 25. b3 Qf3 26. Bb2 Nxd2# 0-1
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.4"]
+[White "gemini-3.1-pro-preview (google/gemini-3.1-pro-preview)"]
+[Black "muse-spark-1.3 (meta/muse-spark-1.3)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Nd6 6. Bxc6 dxc6 7. dxe5 Nf5 8. Qxd8+ Kxd8 9. Rd1+ Ke8 10. Nc3 Be6 11. Bg5 h6 12. Bd2 Kd8 13. Bg5+ Kc8 14. Rd8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.5"]
+[White "claude-fable-5.1 (anthropic/claude-fable-5.1)"]
+[Black "deepseek-v4.1-flash (deepseek/deepseek-v4.1-flash)"]
+[Result "1-0"]
+
+1. e4 Nf6 2. e5 Nd5 3. d4 Nc6 4. c4 Nxd4 5. cxd5 Nc2+ 6. Qxc2 e6 7. Nc3 exd5 8. Nxd5 Qe7 9. Nxe7 Bxe7 10. Qxc7 Kf8 11. Nf3 Ke8 12. Bc4 Kf8 13. O-O Ke8 14. Bxf7+ Kxf7 15. Ng5+ Bxg5 16. Bxg5 Rf8 17. Qc4+ Ke8 18. Rae1 Rxf2 19. Qg8+ Rf8 20. Qxf8# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.6"]
+[White "gpt-5.6-luna (openai/gpt-5.6-luna)"]
+[Black "claude-haiku-4.5 (anthropic/claude-haiku-4.5)"]
+[Result "1/2-1/2"]
+
+1. e4 Nf6 2. e5 d5 3. exf6 gxf6 4. Nf3 Bg4 5. Be2 Bxf3 6. Bxf3 Nc6 7. O-O Nd4 8. c3 Nxf3+ 9. Qxf3 Bg7 10. d4 e6 11. Re1 O-O 12. Bf4 c5 13. Rxe6 fxe6 14. Qh5 Qe7 15. Bg3 Rfd8 16. Qg4 Qd6 17. Bxd6 Rxd6 18. dxc5 Rc6 19. Qd4 Rxc5 20. Qxc5 Re8 21. Qxa7 Re7 22. Qb8+ Re8 23. Qxe8+ Bf8 24. Qxe6+ Kg7 25. Qd7+ Be7 26. Qxe7+ Kg8 27. Qe8+ Kg7 28. Qd7+ Kg8 29. Qxd5+ Kh8 30. Qd8+ Kg7 31. Qe7+ Kg6 32. Qe8+ Kh6 33. Qf8+ Kg5 34. Qg8+ Kh5 35. Qxh7+ Kg4 36. Qe4+ Kg5 37. Qd5+ f5 38. Qd8+ Kf4 39. Qd4+ Kg5 40. Qd7 f4 41. Qxb7 f3 42. Qxf3 Kg6 43. Qg4+ Kh7 44. Qh5+ Kg8 45. Qe8+ Kh7 46. Qf8 Kg6 47. Qe8+ Kh7 48. Qf7+ Kh8 49. Qf8+ Kh7 50. Qe7+ Kg8 51. Qd8+ Kh7 52. Qd7+ Kg8 53. Qc8+ Kh7 54. Qc7+ Kg8 55. Qb8+ Kh7 56. Qb7+ Kg8 57. Qa8+ Kh7 58. Qe4+ Kg8 59. Qe7 Kh8 60. Qe8+ Kg7 61. Qe7+ Kh8 62. Qd8+ Kg7 63. Qe8 Kh7 1/2-1/2
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.7"]
+[White "deepseek-v4-pro-0813 (deepseek/deepseek-v4-pro-0813)"]
+[Black "qwen3.8-max-0902 (qwen/qwen3.8-max-0902)"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Bxc6 dxc6 7. Nxe5 Nxe4 8. Nxf7 Kxf7 9. Qh5+ Kg8 10. Qe8+ Qxe8 11. Re1 Nxf2 12. Kxf2 Bc5+ 13. Kf1 Qxe1+ 14. Kxe1 Bf2+ 15. Kxf2 Kf7 16. Nc3 Re8 17. Nd5 cxd5 18. d4 Re2+ 19. Kxe2 Bg4+ 20. Ke3 Re8+ 21. Kf4 g5+ 22. Kxg5 Rg8+ 23. Kh6 Rg6+ 24. Kxh7 Rh6+ 25. Kxh6 Bf5 26. Kg5 Bxc2 27. Bf4 Bb3 28. axb3 Ke6 29. Rxa6+ bxa6 30. Bxc7 Kf7 31. Bd6 Ke6 32. Be7 Kxe7 33. Kf5 Kf7 34. Ke5 Ke7 35. Kxd5 Kd7 36. Kc5 Kc7 37. d5 Kd7 38. d6 Ke8 39. d7+ Kxd7 40. Kb6 Kc8 41. Kxa6 Kb8 42. b4 Ka8 43. b5 Kb8 44. b6 Ka8 45. b7+ Kb8 46. Kb5 Kxb7 47. Kc5 Ka6 48. Kc6 Ka7 49. b4 Kb8 50. Kd6 Kc8 51. b5 Kd8 52. b6 Kc8 53. b7+ Kxb7 54. h4 Kb6 55. h5 Ka5 56. Kc6 Ka6 57. h6 Ka7 58. h7 Ka8 59. h8=Q+ Ka7 60. Qb8+ Kxb8 61. Kb6 Kc8 62. g4 Kb8 63. g5 Ka8 64. g6 Kb8 65. g7 Ka8 66. g8=Q# 1-0
+
+
+[Event "system-one-chess tournament"]
+[Site "https://github.com/dperezcabrera/system-one-chess"]
+[Date "2026.09.23"]
+[Round "9.8"]
+[White "gemma-4-31b-it (google/gemma-4-31b-it)"]
+[Black "glm-5.3 (z-ai/glm-5.3)"]
+[Result "1/2-1/2"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O a6 5. Bxc6 dxc6 6. Nxe5 Qd4 7. Nc3 Qxe5 8. d4 Qxd4 9. Qxd4 Be6 10. Bg5 Be7 11. e5 Ng4 12. Qxg4 Bxg4 13. Bxe7 Kxe7 14. Nd5+ cxd5 15. h3 Bxh3 16. gxh3 Rhg8 17. Kh2 Raf8 18. f4 d4 19. Rad1 Rd8 20. Rxd4 Rxd4 21. f5 Rd2+ 22. Kg3 Rxc2 23. f6+ gxf6+ 24. Kf3 Rxb2 25. exf6+ Kxf6 26. Ke4+ Kg7 27. Rg1+ Kh8 28. Rxg8+ Kxg8 29. Kd3 Rxa2 30. h4 Ra3+ 31. Ke4 Ra4+ 32. Kd5 Rxh4 33. Kc5 Rh5+ 34. Kd4 Rh4+ 35. Kd5 Rh5+ 36. Kc4 Rh4+ 37. Kd5 h6 38. Ke5 c5 39. Kf6 Kh8 40. Kxf7 Rf4+ 41. Ke6 Re4+ 42. Kd6 Rd4+ 43. Kxc5 h5 44. Kxd4 Kg7 45. Ke5 Kg6 46. Kf4 b5 47. Ke5 Kg5 48. Kd5 Kg4 49. Ke6 h4 50. Kf6 h3 51. Kg6 h2 52. Kh6 h1=Q+ 53. Kg6 Qh8 54. Kf7 Qh7+ 55. Ke6 Qh8 56. Kd6 Qh6+ 57. Kd5 Qh1+ 58. Ke6 Qh6+ 59. Kd5 Qh5+ 60. Kd6 Qg6+ 61. Kd5 Kg5 62. Ke5 Qg7+ 63. Kd5 Qh8 64. Ke6 Qh3+ 65. Kd5 Qh8 66. Ke6 Qg8+ 67. Kd6 Qf8+ 68. Kd5 Qf7+ 69. Kd6 Qg6+ 70. Kd5 Qf7+ 71. Kd6 Qf6+ 72. Kd5 Qd8+ 73. Ke6 Qd4 74. Kf7 Qd5+ 75. Ke7 Qe5+ 76. Kd7 Qd4+ 77. Kc7 Qd5 78. Kb6 Qd8+ 79. Kxa6 Qc8+ 80. Kxb5 Qe8+ 81. Kb6 Qh8 82. Kb7 Qh7+ 83. Kb6 Qh8 84. Kb7 Qg7+ 85. Kb6 Qh6+ 86. Kb7 Kg6 87. Kb6 Qh7 88. Kb5 Qh5+ 89. Kb6 Qh7 90. Kb5 Kg5 91. Kb6 Qg6+ 92. Kb5 Qe8+ 93. Kb6 Qd8+ 94. Kb7 Qd7+ 95. Kb6 Qd6+ 96. Kb7 Qd8 97. Ka6 Qc8+ 98. Kb6 Qb8+ 99. Ka6 Qb6+ 100. Kxb6 1/2-1/2
 

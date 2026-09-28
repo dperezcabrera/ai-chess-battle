@@ -3,27 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI chess battle: the players</title>
-<meta name="description" content="The sixteen players of the AI chess battle: who made them, when, how big they are and what they cost.">
+<meta name="theme-color" content="#f4f1ea">
+<title>AI chess battle: the presentation</title>
+<meta name="description" content="Meet the contenders. Learn the rules. Pick your favourite. The AI chess battle starts here.">
+<link rel="stylesheet" href="vendor/chessground/chessground.base.css">
+<link rel="stylesheet" href="vendor/chessground/chessground.brown.css">
+<link rel="stylesheet" href="vendor/chessground/chessground.cburnett.css">
 <link rel="stylesheet" href="participants.css">
 <script type="module" src="participants.js"></script>
 </head>
 <body>
 <main class="stage">
   <header class="stage-head">
-    <a class="back" href="./">AI chess battle</a>
-    <span id="counter" class="counter" aria-live="polite"></span>
+    <a class="brand" href="./">AI chess battle</a>
+    <nav class="mode-nav" aria-label="Mode"><a href="participants.html" aria-current="page">Presentation</a><a id="tournament-link" href="./">Tournament</a></nav>
+    <button id="fullscreen" class="icon-button" type="button" aria-label="Enter fullscreen" title="Fullscreen">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h7v2H5v5H3zm11 0h7v7h-2V5h-5zM3 14h2v5h5v2H3zm16 0h2v7h-7v-2h5z"/></svg>
+    </button>
   </header>
-  <article id="card" class="card" aria-live="polite"><p class="muted">Loading</p></article>
-  <nav class="stage-nav" aria-label="Players">
-    <button id="prev" class="nav-button" type="button" aria-label="Previous player">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15 5 8 12l7 7 1.4-1.4L10.8 12l5.6-5.6z"/></svg>
-    </button>
-    <ol id="dots" class="dots"></ol>
-    <button id="next" class="nav-button" type="button" aria-label="Next player">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 5 7.6 6.4l5.6 5.6-5.6 5.6L9 19l7-7z"/></svg>
-    </button>
-  </nav>
+  <article id="card" tabindex="0" class="scene" aria-busy="true"><div class="state"><p class="eyebrow">Setting the stage</p><h1>Warming up the brains.</h1><p>Loading the presentation…</p></div></article>
+  <footer class="stage-foot">
+    <div class="transport">
+      <button id="prev" class="nav-button" type="button" aria-label="Previous scene" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m14 5 1.4 1.4L9.8 12l5.6 5.6L14 19l-7-7z"/></svg></button>
+      <button id="next" class="nav-button next-button" type="button" aria-label="Next scene" disabled><span id="next-label">Next</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m10 5 7 7-7 7-1.4-1.4 5.6-5.6-5.6-5.6z"/></svg></button>
+    </div>
+  </footer>
 </main>
+<p id="notice" class="notice" role="status" hidden></p>
 </body>
 </html>

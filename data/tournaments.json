@@ -4,9 +4,9 @@
   "title": "Swiss tournament, 16 players, 9 rounds",
   "started_at": 1790091443.5632694,
   "players": 16,
-  "rounds": 0,
+  "rounds": 9,
   "rounds_total": 9,
-  "games": 0,
-  "leader": "Jev"
+  "games": 72,
+  "leader": "Human"
  }
 ]

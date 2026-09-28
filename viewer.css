@@ -215,3 +215,13 @@ select { font: inherit; min-height: 36px; padding: 0 var(--space-2); border: 1px
 .lineup-player:hover { border-color: var(--accent); }
 .lineup-player .logo, .lineup-player .logo-fallback { width: 44px; height: 44px; font-size: 1.1rem; }
 .lineup-player .player-name { max-width: 100%; }
+
+/* The presentation is an introduction, separate from tournament rounds. */
+.view-modes { display: flex; gap: var(--space-3); font-size: .8rem; font-weight: 700; }
+.view-modes a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; border-bottom: 2px solid transparent; }
+.view-modes [aria-current] { border-bottom-color: var(--accent); }
+@media (max-width: 760px) {
+  .topbar-nav { flex-wrap: wrap; gap: var(--space-2); }
+  .topbar-nav .brand { margin-right: auto; }
+  .topbar-nav #crumbs { flex-basis: 100%; order: 1; font-size: .75rem; }
+}
