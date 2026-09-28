@@ -2,33 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f4f1ea">
-<title>AI chess battle: the presentation</title>
-<meta name="description" content="Meet the contenders. Learn the rules. Pick your favourite. The AI chess battle starts here.">
-<link rel="stylesheet" href="vendor/chessground/chessground.base.css">
-<link rel="stylesheet" href="vendor/chessground/chessground.brown.css">
-<link rel="stylesheet" href="vendor/chessground/chessground.cburnett.css">
-<link rel="stylesheet" href="participants.css">
-<script type="module" src="participants.js"></script>
+<title>AI chess battle</title>
+<meta name="robots" content="noindex">
+<!-- The presentation moved to the home page; old links keep their query and anchor. -->
+<script>location.replace('./' + location.search + location.hash);</script>
+<meta http-equiv="refresh" content="0; url=./">
 </head>
-<body>
-<main class="stage">
-  <header class="stage-head">
-    <a class="brand" href="./">AI chess battle</a>
-    <nav class="mode-nav" aria-label="Mode"><a href="participants.html" aria-current="page">Presentation</a><a id="tournament-link" href="./">Tournament</a></nav>
-    <button id="fullscreen" class="icon-button" type="button" aria-label="Enter fullscreen" title="Fullscreen">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h7v2H5v5H3zm11 0h7v7h-2V5h-5zM3 14h2v5h5v2H3zm16 0h2v7h-7v-2h5z"/></svg>
-    </button>
-  </header>
-  <article id="card" tabindex="0" class="scene" aria-busy="true"><div class="state"><p class="eyebrow">Setting the stage</p><h1>Warming up the brains.</h1><p>Loading the presentation…</p></div></article>
-  <footer class="stage-foot">
-    <div class="transport">
-      <button id="prev" class="nav-button" type="button" aria-label="Previous scene" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m14 5 1.4 1.4L9.8 12l5.6 5.6L14 19l-7-7z"/></svg></button>
-      <button id="next" class="nav-button next-button" type="button" aria-label="Next scene" disabled><span id="next-label">Next</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m10 5 7 7-7 7-1.4-1.4 5.6-5.6-5.6-5.6z"/></svg></button>
-    </div>
-  </footer>
-</main>
-<p id="notice" class="notice" role="status" hidden></p>
-</body>
+<body><p>The presentation is now at <a href="./">the home page</a>.</p></body>
 </html>

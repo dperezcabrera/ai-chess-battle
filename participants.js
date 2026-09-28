@@ -41,7 +41,7 @@ function gameHref(round, board) {
   const query = new URLSearchParams(location.search);
   query.delete('round');
   query.set('game', round + '-' + board);
-  return 'participants.html?' + query;
+  return './?' + query;
 }
 
 // Pairing cards for one round; once the round is published, each board opens its replay in a new tab.
@@ -241,7 +241,7 @@ async function main() {
   } catch {
     card.setAttribute('aria-busy', 'false');
     card.replaceChildren(el('div', { class: 'state' }, heading('A small technical knockout', 'The cast is missing.', 'The participant data is empty or could not be loaded.'),
-      el('button', { class: 'primary-button', type: 'button', onclick: () => location.reload() }, 'Try again'), el('a', { class: 'text-button', href: './' }, 'Back to the tournament')));
+      el('button', { class: 'primary-button', type: 'button', onclick: () => location.reload() }, 'Try again'), el('a', { class: 'text-button', href: 'tournament.html' }, 'Back to the tournament')));
     return;
   }
   try {
@@ -252,7 +252,7 @@ async function main() {
     if (selected) {
       tournament = await loadJSON('data/' + encodeURIComponent(selected.id) + '/tournament.json');
       if (!Array.isArray(tournament.rounds) || !tournament.players) throw new Error('Tournament unavailable');
-      document.getElementById('tournament-link').href = './#/t/' + tournament.id;
+      document.getElementById('tournament-link').href = 'tournament.html#/t/' + tournament.id;
     }
   } catch { tournament = null; tournamentFailed = true; }
   const byId = new Map([...fighters, ...metadata.participants].map((p) => [p.id, p]));

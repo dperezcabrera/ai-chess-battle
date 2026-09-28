@@ -3,31 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI chess battle: games</title>
-<meta name="description" content="Every game of the AI chess battle tournaments, move by move, with engine evaluation, thinking time and cost.">
+<meta name="theme-color" content="#f4f1ea">
+<title>AI chess battle: the presentation</title>
+<meta name="description" content="Meet the contenders. Learn the rules. Pick your favourite. The AI chess battle starts here.">
 <link rel="stylesheet" href="vendor/chessground/chessground.base.css">
 <link rel="stylesheet" href="vendor/chessground/chessground.brown.css">
 <link rel="stylesheet" href="vendor/chessground/chessground.cburnett.css">
-<link rel="stylesheet" href="viewer.css">
-<script type="module" src="viewer.js"></script>
+<link rel="stylesheet" href="participants.css">
+<script type="module" src="participants.js"></script>
 </head>
 <body>
-<header class="topbar">
-  <nav class="topbar-nav" aria-label="Main">
-    <a class="brand" href="#/">AI chess battle</a>
-    <div class="view-modes"><a href="participants.html">Presentation</a><a href="#/" aria-current="page">Tournament</a></div>
-    <ul id="crumbs"></ul>
-    <a class="icon-button" href="https://github.com/dperezcabrera/system-one-chess" target="_blank" rel="noopener" aria-label="Source on GitHub" title="Source on GitHub">
-      <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-    </a>
-  </nav>
-</header>
-<main id="app" aria-live="polite"><p class="state">Loading</p></main>
-<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
-<footer class="footer">
-  Board by <a href="https://github.com/lichess-org/chessground" target="_blank" rel="noopener">chessground</a>,
-  evaluations by <a href="https://stockfishchess.org" target="_blank" rel="noopener">Stockfish</a>.
-  Move judgements and accuracy follow lichess.
-</footer>
+<main class="stage">
+  <header class="stage-head">
+    <a class="brand" href="./">AI chess battle</a>
+    <nav class="mode-nav" aria-label="Mode"><a href="./" aria-current="page">Presentation</a><a id="tournament-link" href="tournament.html">Tournament</a></nav>
+    <button id="fullscreen" class="icon-button" type="button" aria-label="Enter fullscreen" title="Fullscreen">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h7v2H5v5H3zm11 0h7v7h-2V5h-5zM3 14h2v5h5v2H3zm16 0h2v7h-7v-2h5z"/></svg>
+    </button>
+  </header>
+  <article id="card" tabindex="0" class="scene" aria-busy="true"><div class="state"><p class="eyebrow">Setting the stage</p><h1>Warming up the brains.</h1><p>Loading the presentation…</p></div></article>
+  <footer class="stage-foot">
+    <div class="transport">
+      <button id="prev" class="nav-button" type="button" aria-label="Previous scene" disabled><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m14 5 1.4 1.4L9.8 12l5.6 5.6L14 19l-7-7z"/></svg></button>
+      <button id="next" class="nav-button next-button" type="button" aria-label="Next scene" disabled><span id="next-label">Next</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m10 5 7 7-7 7-1.4-1.4 5.6-5.6-5.6-5.6z"/></svg></button>
+    </div>
+  </footer>
+</main>
+<p id="notice" class="notice" role="status" hidden></p>
 </body>
 </html>

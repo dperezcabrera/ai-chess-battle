@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Serves this presentation with every round of the tournament, for recording videos before the rounds are released.
-# The full data lives in system-one-chess/viewer/dist (gitignored there), never in this public repository.
-# Usage: scripts/preview.sh [--build]   then open http://localhost:8771/participants.html?round=1&rec
+# The full data comes from system-one-chess/viewer/dist (gitignored there).
+# Usage: scripts/preview.sh [--build]   then open http://localhost:8771/?round=1&rec
 set -euo pipefail
 site=$(cd "$(dirname "$0")/.." && pwd)
 engine=${ENGINE:-$site/../system-one-chess}

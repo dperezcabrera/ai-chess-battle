@@ -1,4 +1,4 @@
-// Round episodes: participants.html?round=N tells round N as a sequence of scenes, from published rounds only.
+// Round episodes: ?round=N tells round N as a sequence of scenes, from published rounds only.
 import { Chessground } from './vendor/chessground/chessground.min.js';
 import { figurine, piece } from './figurine.js';
 import { momentExtras, momentPicks } from './game-moments.js';

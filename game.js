@@ -1,4 +1,4 @@
-// Game player: participants.html?game=R-B plays board B of round R move by move, from published data only.
+// Game player: ?game=R-B plays board B of round R move by move, from published data only.
 import { Chessground } from './vendor/chessground/chessground.min.js';
 import { gameComments } from './game-comments.js';
 import { figurine } from './figurine.js';
@@ -144,7 +144,7 @@ export function createGame({ el, logo, heading, player }) {
     const query = new URLSearchParams(location.search);
     query.delete('game');
     query.set('round', game.round);
-    return 'participants.html?' + query + '#results-r' + game.round;
+    return './?' + query + '#results-r' + game.round;
   }
 
   function result() {
