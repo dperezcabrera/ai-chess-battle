@@ -44,7 +44,7 @@ export function createGame({ el, logo, heading, player }) {
   }
 
   function matchup() {
-    return el('div', { class: 'confusion-layout game-matchup' }, heading(kicker(), 'Tonight’s duel.'),
+    return el('div', { class: 'confusion-layout game-matchup' }, heading(kicker(), 'Face to face.'),
       el('div', { class: 'duel' }, el('div', {}, logo(player(game.white)), el('strong', {}, name(game.white)), el('span', { class: 'colour-label' }, 'White')),
         el('span', { class: 'versus' }, 'vs'),
         el('div', {}, logo(player(game.black)), el('strong', {}, name(game.black)), el('span', { class: 'colour-label' }, 'Black'))));
