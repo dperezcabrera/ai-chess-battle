@@ -17,6 +17,9 @@ button, a { touch-action: manipulation; }
 button:disabled { cursor: default; opacity: .45; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 h1:focus { outline: none; }
+/* The stage itself takes focus to catch the keys; it never gets a ring, and clicks to advance never select text. */
+#card:focus, #card:focus-visible { outline: none; }
+.scene { user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
 [hidden] { display: none !important; }
 h1, h2, h3, p { margin: 0; }
 svg { width: 1.4em; height: 1.4em; flex: none; }

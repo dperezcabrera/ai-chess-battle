@@ -17,7 +17,7 @@ const clock = (s) => { s = Math.round(s); const h = Math.floor(s / 3600), m = Ma
   return h ? `${h}:${String(m).padStart(2, '0')}:${r}` : m ? `${m}:${r}` : `${s} s`; };
 const evalText = (e) => !e ? '' : e.mate ? '#' + Math.abs(e.mate) : (e.cp > 0 ? '+' : '') + (e.cp / 100).toFixed(1);
 
-export function createGame({ el, logo, heading, player }) {
+export function createGame({ el, logo, heading, player, navHint }) {
   let t, summary, game, ply = 0, ground, view;
   const name = (id) => player(id).name;
 
@@ -47,7 +47,8 @@ export function createGame({ el, logo, heading, player }) {
     return el('div', { class: 'confusion-layout game-matchup' }, heading(kicker(), 'Face to face.'),
       el('div', { class: 'duel' }, el('div', {}, logo(player(game.white)), el('strong', {}, name(game.white)), el('span', { class: 'colour-label' }, 'White')),
         el('span', { class: 'versus' }, 'vs'),
-        el('div', {}, logo(player(game.black)), el('strong', {}, name(game.black)), el('span', { class: 'colour-label' }, 'Black'))));
+        el('div', {}, logo(player(game.black)), el('strong', {}, name(game.black)), el('span', { class: 'colour-label' }, 'Black'))),
+      navHint('Click or tap to play the moves'));
   }
 
   function side(id, colour) {

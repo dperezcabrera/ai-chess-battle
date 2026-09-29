@@ -175,14 +175,14 @@ function renderScene(scene) {
     opening?.bye && el('p', {}, 'Bye: ' + (players.get(opening.bye)?.name || opening.bye)));
 }
 
-// The first scene's hint on how to move on: the arrow keys drawn as keycaps.
-function navHint() {
+// A hint on how to move on, with the arrow keys drawn as keycaps: the first scene's, and the game player's.
+function navHint(text = 'Click or tap to continue') {
   const key = (label, path) => {
     const kbd = el('kbd', { 'aria-label': label });
     kbd.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${path}"/></svg>`;
     return kbd;
   };
-  return el('p', { class: 'nav-hint' }, 'Click or tap to continue · or ', key('left arrow', 'M19 12H5M11 6l-6 6 6 6'), ' ', key('right arrow', 'M5 12h14M13 6l6 6-6 6'));
+  return el('p', { class: 'nav-hint' }, text + ' · or ', key('left arrow', 'M19 12H5M11 6l-6 6 6 6'), ' ', key('right arrow', 'M5 12h14M13 6l6 6-6 6'));
 }
 
 function go(target, updateHash = true) {
@@ -269,7 +269,7 @@ async function main() {
   const byId = new Map([...fighters, ...metadata.participants].map((p) => [p.id, p]));
   const player = (id) => byId.get(id) || { id, kind: tournament?.players[id]?.kind, name: tournament?.players[id]?.name || id };
   if (params.has('game') && tournament) {
-    gamePlayer = createGame({ el, logo, heading, player });
+    gamePlayer = createGame({ el, logo, heading, player, navHint });
     try { scenes = await gamePlayer.load(tournament, params.get('game'), loadJSON); }
     catch { scenes = [{ id: 'unavailable', type: 'game-missing', chapter: 'game', label: 'Not available', game: true }]; }
     return followHash();
@@ -314,7 +314,10 @@ addEventListener('hashchange', () => { if (scenes.length) followHash(); });
 // Viewers of the published page click (or tap) anywhere to go on; the left edge goes back. Links and buttons keep
 // their own click. Off while recording, where a click is only meant to focus the window.
 card.addEventListener('click', (event) => {
-  if (!scenes.length || params.has('rec') || event.target.closest('a, button, input, select, textarea') || getSelection().toString()) return;
+  // A game opened from its card leaves the card focused; drop the focus so the arrow keys don't draw a ring on it.
+  const link = event.target.closest('a');
+  if (link) { setTimeout(() => link.blur()); return; }
+  if (!scenes.length || params.has('rec') || event.target.closest('button, input, select, textarea')) return;
   step(event.clientX < innerWidth * 0.2 ? -1 : 1);
 });
 addEventListener('keydown', (event) => {
