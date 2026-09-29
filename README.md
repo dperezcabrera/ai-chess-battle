@@ -19,7 +19,7 @@ then every round one after another.
 
 Each round has its cover, the pairings with their results (each one links to its game), the table after the round
 (wins, draws, losses, blunders, pawns lost per move, thinking time, spend, tie-break and the change of place) and
-its three great hits. The last round adds how often each model blundered, the chances each one took, the bill and
+its three great hits. The last round adds how often each model blundered, how each one opens, the chances each one took, the bill and
 the AI podium.
 
 ### Links

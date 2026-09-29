@@ -2,6 +2,7 @@
 import { Chessground } from './vendor/chessground/chessground.min.js';
 import { figurine, piece } from './figurine.js';
 import { momentExtras, momentPicks } from './game-moments.js';
+import { defenceName, whiteChoice, favourite } from './openings.js';
 import { tally, lostPerMove, blunderEvery } from './quality.js';
 
 // A round shows its three best moments; the score ranks them, the rarest stories first.
@@ -256,6 +257,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
       ...moments.map((m, i) => ({ id: m.key + '-' + (i + 1), type: 'moment', chapter: 'moments', label: m.title || momentLabels[m.key], moment: m, ...(m.h.frames && swapControls(m.h)) })),
       // The chances and the bill come once, at the end of the tournament: round after round they only grow.
       ...(round === t.rounds_total ? [{ id: 'blunders', type: 'blunders', chapter: 'standings', label: 'The blunders' },
+        { id: 'openings', type: 'openings', chapter: 'standings', label: 'The openings' },
         { id: 'chances', type: 'chances', chapter: 'standings', label: 'The chances', rows: await chances(loadJSON) },
         { id: 'bill', type: 'bill', chapter: 'standings', label: 'The bill' }] : []),
       ...(!last ? [] : round < t.rounds_total ? [{ id: 'next', type: 'next', chapter: 'next', label: 'Next round' }]
@@ -472,6 +474,26 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
           el('td', { class: 'num' }, lostPerMove(q[id])))))));
   }
 
+  // How each machine opens: the first move as White, its favourite answer to 1.e4, and its pick after 1…e5 2…Nc6.
+  function openingsScene() {
+    const games = loadedGames.flatMap((r) => r.games).filter(Boolean);
+    const machine = (id) => t.players[id].kind !== 'human';
+    const asWhite = games.filter((g) => machine(g.white));
+    const e4 = asWhite.filter((g) => g.plies[0]?.san === 'e4').length;
+    const cell = (f) => f ? el('span', { class: f.times === f.of && f.of > 3 && f.name !== '1…e5' ? 'always' : '' }, f.name, el('small', {}, ` ${f.times} of ${f.of}`)) : '—';
+    const rows = after(n).order.filter(machine).map((id) => {
+      const defence = favourite(games.filter((g) => g.black === id && g.plies[0]?.san === 'e4').map((g) => defenceName(g.plies.map((p) => p.san))));
+      const pick = favourite(games.filter((g) => g.white === id && g.plies.slice(1, 4).map((p) => p.san).join() === 'e5,Nf3,Nc6')
+        .map((g) => whiteChoice[g.plies[4]?.san] || 'Other'));
+      return el('tr', {}, el('td', {}, side(id)), el('td', {}, cell(defence)), el('td', {}, cell(pick)));
+    });
+    return el('div', { class: 'bill-layout' },
+      heading('The whole tournament', e4 === asWhite.length ? `${asWhite.length} games as White. ${e4} times 1.e4.` : 'The openings.'),
+      el('table', { class: 'bill chances openings', 'data-step': '' },
+        el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, 'Player'), el('th', { scope: 'col' }, 'As Black, against 1.e4'), el('th', { scope: 'col' }, 'As White, against 1…e5'))),
+        el('tbody', {}, rows)));
+  }
+
   function billScene() {
     const { pts, cost, seconds } = after(n);
     const ids = Object.keys(t.players).sort((a, b) => cost[b] - cost[a]);
@@ -512,7 +534,7 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
         el('span', { class: 'place' }, ['1st', '2nd', '3rd'][i]), logo(player(order[i])), el('strong', {}, name(order[i])), el('span', { class: 'num' }, points(pts[order[i]]) + ' pts')))));
   }
 
-  const renderers = { blunders: blundersScene, chances: chancesScene, cover: coverScene, hits: hitsScene, results: resultsScene, moment: (s) => momentScene(s.moment), standings: standingsScene, bill: billScene, next: nextScene, podium: podiumScene };
+  const renderers = { blunders: blundersScene, openings: openingsScene, chances: chancesScene, cover: coverScene, hits: hitsScene, results: resultsScene, moment: (s) => momentScene(s.moment), standings: standingsScene, bill: billScene, next: nextScene, podium: podiumScene };
   return {
     scenes,
     // A chained presentation holds several rounds: each scene renders the round it belongs to.
