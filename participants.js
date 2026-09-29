@@ -300,6 +300,12 @@ next.addEventListener('click', () => step(1));
 // Recording mode: no navigation chrome and no cursor, for screen captures.
 document.body.classList.toggle('recording', params.has('rec'));
 addEventListener('hashchange', () => { if (scenes.length) followHash(); });
+// Viewers of the published page click (or tap) anywhere to go on; the left edge goes back. Links and buttons keep
+// their own click. Off while recording, where a click is only meant to focus the window.
+card.addEventListener('click', (event) => {
+  if (!scenes.length || params.has('rec') || event.target.closest('a, button, input, select, textarea') || getSelection().toString()) return;
+  step(event.clientX < innerWidth * 0.2 ? -1 : 1);
+});
 addEventListener('keydown', (event) => {
   if (!scenes.length || event.altKey || event.ctrlKey || event.metaKey ||
       event.target.closest('input, select, textarea, [contenteditable]')) return;

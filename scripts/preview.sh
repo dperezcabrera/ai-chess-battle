@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Serves this presentation with every round of the tournament, for recording videos before the rounds are released.
+# Serves this presentation with every round of the tournament, straight from a local build of the data.
 # The full data comes from system-one-chess/viewer/dist (gitignored there).
 # Usage: scripts/preview.sh [--build]   then open http://localhost:8771/?round=1&rec
 set -euo pipefail
 site=$(cd "$(dirname "$0")/.." && pwd)
-engine=${ENGINE:-$site/../system-one-chess}
+engine=${ENGINE:-$site/../ai-chess-lab}
 tournament=${TOURNAMENT:-20260922-141451-7ccf}
 dist=$engine/viewer/dist
 if [ "${1:-}" = --build ] || [ ! -d "$dist/data/$tournament" ]; then

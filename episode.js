@@ -66,6 +66,12 @@ function mateSwap(game) {
     result: game.result, ...where(game, first - 1), frames, slips: best.length } };
 }
 
+// A move as written in game-moments.js: '19.' is White's 19th move, '19...' Black's; a bare number is a ply.
+const plyOf = (at) => {
+  const m = String(at).match(/^(\d+)(\.{1,3})$/);
+  return m ? 2 * Number(m[1]) - (m[2] === '.' ? 1 : 0) : Number(at);
+};
+
 // The piece on a square, from a FEN: 'Q' a white queen, 'q' a black one, null an empty square.
 function pieceAt(fen, square) {
   const row = fen.split(' ')[0].split('/')[8 - Number(square[1])];
@@ -200,22 +206,22 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
     const games = Object.fromEntries(round.games.map((g, i) => [g.board, null]));
     const loaded = (await tournamentGames(loadJSON)).find((r) => r.number === number)?.games || [];
     round.games.forEach((g, i) => { games[g.board] = loaded[i]; });
-    const written = (list) => (list || []).map(({ board, ply, title, metric, caption, steps }) => {
+    const written = (list) => (list || []).map(({ board, title, metric, caption, side: chosen, notes = {}, ...at }) => {
       const game = games[board];
       if (!game) return null;
-      // The board faces the side that made the move (ply 1 is White's).
-      const colour = ply % 2 ? 'white' : 'black';
+      const ply = plyOf(at.ply ?? at.to), from = at.from ? plyOf(at.from) : at.steps ? ply - 1 : null;
+      // The board faces the side the story is about: the one that plays the last move, unless `side` says otherwise.
+      const colour = chosen || (ply % 2 ? 'white' : 'black');
       const h = { ...where(game, ply), board, white: game.white, black: game.black, result: game.result, metric, caption, player: game[colour], orientation: colour };
-      // With `steps`, Next walks the exchange: the position before the opponent's move, that move (with an arrow
-      // on the reply), then the reply itself, each with Stockfish's verdict for the side that replies.
-      if (steps && ply > 1) {
-        const move = game.plies[ply - 1], previous = game.plies[ply - 2];
-        const side = game[colour], opponent = game[colour === 'white' ? 'black' : 'white'];
-        h.frames = [
-          { ...where(game, ply - 2), start: { opponent, side, colour, eval: game.evals[ply - 2] } },
-          { ...where(game, ply - 1), arrow: move.uci, before: { previous, side, colour, eval: game.evals[ply - 1] } },
-          { ...where(game, ply), after: { move, side, colour, eval: game.evals[ply] } },
-        ];
+      // With a range, Next walks it move by move from the position before `from`, each move with Stockfish's verdict
+      // for that side; the move that ends the range is announced with an arrow one frame early.
+      if (from && from <= ply) {
+        const note = Object.fromEntries(Object.entries(notes).map(([k, text]) => [plyOf(k), text]));
+        h.frames = [{ ...where(game, from - 1), start: { toMove: game[from % 2 ? 'white' : 'black'], side: game[colour], colour, eval: game.evals[from - 1] } }];
+        for (let k = from; k <= ply; k++) {
+          h.frames.push({ ...where(game, k), arrow: k === ply - 1 ? game.plies[ply - 1].uci : null,
+            move: { ply: game.plies[k - 1], side: game[colour], colour, eval: game.evals[k], note: note[k], last: k === ply } });
+        }
       }
       return { key: 'pick', score: 200, title, h };
     }).filter(Boolean);
@@ -276,10 +282,13 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
   function frameText(h, f) {
     // Stockfish's verdict for one side, signed from its point of view: +2.9 is that side ahead.
     const verdict = (side, colour, e) => `${name(side)} ${evalFor(e, colour)}`;
-    if (f.start) return `${name(f.start.opponent)} to move. Stockfish: ${verdict(f.start.side, f.start.colour, f.start.eval)}.`;
-    if (f.before) return [`${name(f.before.previous.player)} plays `, figurine(f.before.previous.san, f.before.previous.colour),
-      `. Stockfish: ${verdict(f.before.side, f.before.colour, f.before.eval)}.`];
-    if (f.after) return ['After ', figurine(f.after.move.san, f.after.colour), `: ${verdict(f.after.side, f.after.colour, f.after.eval)}. `, h.caption || ''];
+    if (f.start) return `${name(f.start.toMove)} to move. Stockfish: ${verdict(f.start.side, f.start.colour, f.start.eval)}.`;
+    if (f.move?.ply) {
+      const { ply: p, side, colour, eval: e, note, last } = f.move;
+      const bad = (p.judgement === 'blunder' || p.judgement === 'mistake') && p.best;
+      return [`${name(p.player)} plays `, figurine(p.san, p.colour), bad ? [' instead of ', figurine(p.best, p.colour)] : '',
+        `. Stockfish: ${verdict(side, colour, e)}.`, note ? ' ' + note : '', last && h.caption ? ' ' + h.caption : ''];
+    }
     const m = f.move;
     if (!m) return f.mateIn ? `${name(f.toMove)} has a mate in ${f.mateIn} on the board.` : `${name(f.toMove)} to move.`;
     const who = name(m.player), opponent = name(m.colour === 'white' ? h.black : h.white);
