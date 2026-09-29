@@ -111,7 +111,8 @@ function renderScene(scene) {
       heading('Trying to make sense of AI', 'Everyone is #1.'),
       el('ul', { class: 'hype-wall', 'aria-label': 'The hype, contradictions and questions' },
         openingCopy.phrases.map((phrase, i) => el('li', { class: 'hype-label', style: '--entry:' + i }, phrase))),
-      el('p', { class: 'scene-caption' }, 'Rankings, promises, doubts. And another model tomorrow.'));
+      el('p', { class: 'scene-caption' }, 'Rankings, promises, doubts. And another model tomorrow.'),
+      navHint());
   }
   if (scene.id === 'confusion') {
     return el('div', { class: 'confusion-layout' },
@@ -172,6 +173,16 @@ function renderScene(scene) {
       el('p', {}, tournamentFailed ? 'The tournament could not be loaded. The introductions are still available.' : 'Pairings will appear here when they are published.'),
       tournamentFailed && el('button', { class: 'text-button', type: 'button', onclick: () => location.reload() }, 'Try again')),
     opening?.bye && el('p', {}, 'Bye: ' + (players.get(opening.bye)?.name || opening.bye)));
+}
+
+// The first scene's hint on how to move on: the arrow keys drawn as keycaps.
+function navHint() {
+  const key = (label, path) => {
+    const kbd = el('kbd', { 'aria-label': label });
+    kbd.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${path}"/></svg>`;
+    return kbd;
+  };
+  return el('p', { class: 'nav-hint' }, 'Click or tap to continue · or ', key('left arrow', 'M19 12H5M11 6l-6 6 6 6'), ' ', key('right arrow', 'M5 12h14M13 6l6 6-6 6'));
 }
 
 function go(target, updateHash = true) {
@@ -310,7 +321,7 @@ addEventListener('keydown', (event) => {
   if (!scenes.length || event.altKey || event.ctrlKey || event.metaKey ||
       event.target.closest('input, select, textarea, [contenteditable]')) return;
   if (event.key === ' ' && event.target.closest('button, a, summary')) return;
-  const steps = { ArrowRight: 1, PageDown: 1, ' ': 1, ArrowLeft: -1, PageUp: -1 };
+  const steps = { ArrowRight: 1, ArrowDown: 1, PageDown: 1, ' ': 1, ArrowLeft: -1, ArrowUp: -1, PageUp: -1 };
   // A held or lagging key (a busy VM delays the key release) auto-repeats; one press is one step.
   if (event.key in steps) { event.preventDefault(); if (!event.repeat) step(steps[event.key]); }
   else if (event.key === 'Home' || event.key === 'End') {

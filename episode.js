@@ -275,7 +275,8 @@ export function createEpisode({ el, logo, heading, player, pairingList, gameHref
           el('div', { class: 'pair-side white-side' }, logo(player(g.white)), el('strong', {}, name(g.white))),
           el('span', { class: 'score' }, el('span', { class: 'score-hidden', 'aria-hidden': 'true' }, 'vs'), el('span', { class: 'score-final' }, resultText[g.result] || g.result)),
           el('div', { class: 'pair-side black-side' }, logo(player(g.black)), el('strong', {}, name(g.black))))))),
-      round.bye && el('p', { class: 'muted' }, 'Bye: ' + name(round.bye)));
+      round.bye && el('p', { class: 'muted' }, 'Bye: ' + name(round.bye)),
+      el('p', { class: 'nav-hint' }, 'Click a game to replay it in a new tab'));
   }
 
   // One step of a mate ping-pong, in words: who hands over a mate, who misses it, who finally takes it.

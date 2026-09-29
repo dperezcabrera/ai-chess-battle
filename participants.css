@@ -141,6 +141,11 @@ a.pairing:hover { background: var(--soft); }
 .intro-layout { display: flex; flex-direction: column; justify-content: center; gap: var(--s6); }
 .intro-layout .scene-heading { text-align: center; }
 .intro-layout h1 { font-size: clamp(2.8rem, 5vw, 5rem); }
+/* How to move on, for viewers of the published page; a recording drives it with the keyboard. */
+.nav-hint { position: absolute; inset: auto 0 var(--s4); text-align: center; font: 700 clamp(.85rem, 1.1vw, 1.1rem)/1.4 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); animation: phrase-in 450ms var(--ease) 2.5s both; }
+.recording .nav-hint { display: none; }
+.nav-hint kbd { display: inline-flex; align-items: center; justify-content: center; width: 1.9em; height: 1.6em; border: 1.5px solid currentColor; border-radius: 4px; vertical-align: middle; }
+.nav-hint svg { width: 1.1em; height: 1.1em; }
 .hype-wall { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: var(--s5) var(--s4); list-style: none; margin: 0; padding: var(--s3) 0; }
 .hype-label { font-size: clamp(1rem, 1.6vw, 1.5rem); line-height: 1.4; color: var(--muted); text-align: center; animation: phrase-in 450ms var(--ease) both; animation-delay: calc(var(--entry) * 160ms); }
 .hype-label:nth-child(3n + 1) { font-weight: 700; color: var(--ink); }
